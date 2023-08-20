@@ -24,7 +24,12 @@
                   <li class="nav-item">
                     <router-link to="/admin">Admin</router-link>
                   </li>
-                 
+                  <li class="nav-item">
+                    <router-link to="/admin">Login</router-link>
+                  </li>
+                   <li class="nav-item">
+                    <router-link to="/admin">Register</router-link>
+                  </li>
                 </ul>
               </div>
             </div>
