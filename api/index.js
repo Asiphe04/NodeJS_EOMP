@@ -1,32 +1,39 @@
-const express = require("express");
-const path = require("path");
-// const app = express();
-// const db = require("./config");
-const bodyParser = require("body-parser");
-// const port = +process.env.PORT || 3000;
-const cors = require("cors");
-const router = require("./routes/routes");
-// init express
+// Importing modules and instantiating express app
+const path = require('path')
+const express = require('express');
+const cors = require('cors');
 const app = express();
 
-// use express json
-app.use(express.json());
+// Importing routes
+const router = require('./routes/router');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Setting port based on environment variables
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
 
-//use cors
-app.use(cors());
+// App settings & middleware
+app.set('PORT', process.env.PORT || 3000);
+app.use(express.json(), cors());
 
-// use router
-app.use(router);
-
-app.get("/", function (req, res) {
-  res.json({ message: "Welcome to Asiphe Ndimlana and Mufuniwa's api" });
+// Allowing frontend access to backend
+app.use((req, res, next)=> {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header("Access-Control-Allow-Credentials", "true")
+  res.header("Access-Control-Allow-Methods", "*")
+  res.header("Access-Control-Allow-Headers", "*")
+  next();
 });
 
-// PORT
-const PORT = process.env.PORT || 8080;
+// Root Route
+app.get('/', (req, res) => {
+  res.status(200);
+  res.sendFile(path.join(__dirname, './static/html/index.html'));
+})
+// Use router to handle product and user routes
+app.use('/users', router.userRoutes);
+app.use('/products', router.productRoutes);
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
