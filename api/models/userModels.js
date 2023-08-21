@@ -1,5 +1,5 @@
 
-const con = require('../config')
+const con = require('../config/db')
 const {hash, compare, hashSync} = require('bcrypt');
 const userAuth = require('../middleware/AuthenticateUser');
 
