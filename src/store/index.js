@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-const URL = "";
+const URL = "https://nodejseomp.onrender.com/";
 export default createStore({
   state: {
     users: null,
@@ -48,7 +48,7 @@ export default createStore({
     }, 
     async fetchUsers(context, payload) {
       try {
-        const res = await fetch(`${Watchmen}users`, payload);
+        const res = await fetch(`${URL}users`, payload);
         if (!res.ok) {
           throw new Error("Failed to fetch users");
         }
@@ -99,7 +99,7 @@ export default createStore({
     
     fetchProducts: async (context) => {
       try {
-        const res = await fetch(`${URL}Products`);
+        const res = await fetch(`${URL}products`);
         if (!res.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -111,17 +111,30 @@ export default createStore({
         console.error("Error fetching products:", error);
       }
     },
+    // fetchProduct: async (context, id) => {
+    //   try {
+    //     const res = await fetch(`${URL}Products/` + id);
+    //     if (!res.ok) {
+    //       throw new Error("Failed to fetch product");
+    //     }
+    //     const Product = await res.json();
+    //     context.commit("setProduct", Product);
+    //   } catch (error) {
+    //     console.error("Error fetching product:", error);
+    //   }
+    // },
     fetchProduct: async (context, id) => {
-      try {
-        const res = await fetch(`${URL}Products/` + id);
-        if (!res.ok) {
-          throw new Error("Failed to fetch product");
-        }
-        const Product = await res.json();
-        context.commit("setProduct", Product);
-      } catch (error) {
-        console.error("Error fetching product:", error);
-      }
+      fetch(`${URL}products`)
+        .then((res) => res.json())
+        .then(({ products }) => {
+          let product;
+          products.forEach((prod) => {
+            if (prod.id == id) {
+              product = prod;
+            }
+          });
+          context.commit("setProduct", product);
+        });
     },
   },
  
