@@ -4,7 +4,7 @@ const db = require("../config/db");
 //Get products
 const getProducts = (result) => {
   db.query(
-    "SELECT prodID, prodName, quantity, amount , category, prodURL, desc FROM products",
+    "SELECT prodID, prodName, quantity, amount , category, prodURL , description FROM products",
     (err, results) => {
       if (err) {
         console.log(err);
@@ -19,7 +19,7 @@ const getProducts = (result) => {
 
 const getProductByID = (id, result) => {
   const query =
-    "SELECT prodID, prodName, quantity, amount , category, prodURL, desc FROM products WHERE prodID = ?";
+    "SELECT prodID, prodName, quantity, amount , category, prodURL, description FROM products WHERE prodID = ?";
   db.query(query, [id], (err, results) => {
     if (err) {
       console.log("Error executing query:", query);
@@ -46,14 +46,14 @@ const insertProduct = (data, result) => {
 // Update an existing product
 const updateProductByID = (id, data, result) => {
   db.query(
-    "UPDATE products SET prodName = ?, quantity = ?, amount = ?, category = ?, prodURL = ? , desc = ? WHERE prodID = ?",
+    "UPDATE products SET prodName = ?, quantity = ?, amount = ?, category = ?, prodURL = ? , description = ? WHERE prodID = ?",
     [
       data.prodName,
       data.quantity,
       data.amount,
       data.category,
       data.prodURL,
-      data.desc,
+      data.description,
       id,
     ],
     (err, results) => {
