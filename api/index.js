@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 // Importing routes
-const router = require("./routes/ProductRoutes");
+const router = require("./routes/router");
 
 // Setting port based on environment variables
 require("dotenv").config();
