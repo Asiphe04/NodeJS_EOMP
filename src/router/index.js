@@ -38,6 +38,16 @@ const routes = [
     name: 'adminAdd',
     component: () => import('../views/AdminAdd.vue')
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LogInView.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    comment: () => import('../views/RegisterView.vue')
+  }
 ]
 
 const router = createRouter({

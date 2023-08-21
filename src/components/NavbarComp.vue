@@ -1,6 +1,6 @@
 <template lang="">
-    <div>
-        <nav class="navbar navbar-expand-lg bg-body-dark">
+    <div class="home">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
               
               <a class="navbar-brand" href="#">  <img src="https://i.postimg.cc/fkQWYhTv/nodelogo.jpg" class="img-nav" alt="Logo"></a>
@@ -10,25 +10,25 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
                   <li class="nav-item">
-                    <router-link  to="/">Home</router-link>
+                    <router-link class="nav-text" to="/">Home</router-link>
                   </li>
                      <li class="nav-item">
-                    <router-link  to="/about">About</router-link>
+                    <router-link class="nav-text" to="/about">About</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/products">Products</router-link>
+                    <router-link class="nav-text" to="/products">Products</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/contact">Contact Us</router-link>
+                    <router-link class="nav-text" to="/contact">Contact Us</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/admin">Admin</router-link>
+                    <router-link class="nav-text" to="/admin">Admin</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/admin">Login</router-link>
+                    <router-link class="nav-text" to="/login">Login</router-link>
                   </li>
                    <li class="nav-item">
-                    <router-link to="/admin">Register</router-link>
+                    <router-link class="nav-text" to="/register">Register</router-link>
                   </li>
                 </ul>
               </div>
@@ -45,18 +45,25 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Catamaran&family=Cormorant+Garamond&family=Genos&family=Montserrat:wght@500&display=swap');
 nav {
-  background-color: #61b3ff;
-  box-shadow: 0 0 5px -3px #121212;
+  background-image: linear-gradient(to bottom, rgba(21, 22, 25, 1), rgba(217, 217, 217, 0));
+  /* box-shadow: 0 0 5px -3px #121212; */
   margin-bottom: 20px;
 }
 .navbar-brand {
-  background-color: transparent;
+  background-color: linear-gradient(rgba(21, 22, 25, 1),rgba(217, 217, 217, 0));
+}
+.nav-item {
+  font-size: x-large;
+  font-family: 'Libre Baskerville', serif;
+}
+.nav-text {
+  color: white;
 }
 .img-nav{
     text-align: left;
     border: 2px solid black;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
 }
 router-link {
@@ -75,9 +82,9 @@ router-link:hover::after {
   left: 0;
 }
 
-.body {
+/* .homey {
   background-color: #D4C4C4B2 !important;
   ;
   position: fixed;
-}
+} */
 </style>
