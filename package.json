@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "salt": "^0.5.5"
+  }
+}
