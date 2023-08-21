@@ -28,26 +28,30 @@ router.delete("/products/:id", deleteProduct);
 
 // Update a product
 router.put("/products/:id", updateProduct);
-const controller = require("../controllers/users");
+
+const {
+  showUsers,
+  showUserByID,
+  createUser,
+  deleteUser,
+  updateUser,
+} = require("../controllers/users");
+
 //users
-router.get("/users", (req, res) => {
-  controller.getUsers(req, res);
-});
-router.post("/register", (req, res) => {
-  controller.register(req, res);
-});
-router.post("/login", (req, res) => {
-  controller.login(req, res);
-});
-router.get("/users/:id", (req, res) => {
-  controller.getUser(req, res);
-});
-router.patch("/users/:id", (req, res) => {
-  controller.updateUser(req, res);
-});
-router.delete("/users/:id", (req, res) => {
-  controller.deleteUser(req, res);
-});
+//get all users
+router.get("/users", showUsers);
+
+//get single user
+router.get("/users/:id", showUserByID);
+
+//create a new user
+router.post("/users", createUser);
+
+// Delete a user
+router.delete("/users/:id", deleteUser);
+
+// Update a user
+router.put("/users/:id", updateUser);
 
 // export default router
 module.exports = router;

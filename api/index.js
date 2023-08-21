@@ -34,9 +34,7 @@ app.get("/", (req, res) => {
   res.status(200);
   res.sendFile(path.join(__dirname, "./static/html/index.html"));
 });
-// Use router to handle product and user routes
-// app.use("/users", router.userRoutes);
-// app.use('/products', router.productRoutes);
+
 app.use(router);
 
 app.listen(PORT, () => {
