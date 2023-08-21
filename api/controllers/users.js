@@ -18,7 +18,7 @@ const showUsers = (req, res) => {
   });
 };
 
-// get single product
+// get single user
 const showUserByID = (req, res) => {
   getUserByID(req.params.id, (err, results) => {
     if (err) {
@@ -29,7 +29,7 @@ const showUserByID = (req, res) => {
   });
 };
 
-// create new product
+// create new user
 const createUser = (req, res) => {
   const data = req.body;
   insertUser(data, (err, results) => {
@@ -40,7 +40,7 @@ const createUser = (req, res) => {
     }
   });
 };
-// delete a product
+// delete a user
 const deleteUser = (req, res) => {
   const id = req.params.id;
   deleteUserByID(id, (err, results) => {
@@ -52,7 +52,7 @@ const deleteUser = (req, res) => {
   });
 };
 
-// update a product
+// update a user
 const updateUser = (req, res) => {
   const id = req.params.id;
   const data = req.body;
