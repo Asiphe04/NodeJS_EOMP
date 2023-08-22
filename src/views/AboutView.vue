@@ -2,6 +2,22 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
+      <h1 class="heading">About elegancescent</h1>
+      <p class="about-text">elegance scent was established by Mufuniwa Mbedzi and Asiphe Ndimlana in 2023. We Started this e-commerce website to give young male adults and grown Men a platform to purchase their favourite cologne and smell presentable while looking stylish. <br>
+        As a new e-commerce website we are proud to announce our partners that we collaborated with
+      </p>
+
+    </div>
+    <div class="col-6">
+
+<h2 class="brands">Working with one of the best brands in the Globe</h2>
+      <img class="brand-img" src="https://i.postimg.cc/fW5mscgb/HM.png" alt="">
+      <img class="brand-img" src="https://i.postimg.cc/YqYJsSSM/download.png" alt="">
+      <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
+      <img class="brand-img" src="https://i.postimg.cc/DfXv7nzY/fcce4567-f070-42b4-9b00-d46c32a9cca8.jpg" alt="">
+    </div>
+
+    <div class="img-container">
       <div class="card card-img" style="width: 320px;">
   <img src="https://i.postimg.cc/MTVbqYDX/C12-Mufuniwa-Mbedzi-1.jpg" class="card-img-top about-img" alt="">
   <div class="card-body">
@@ -19,17 +35,6 @@
 </div>
 
     </div>
-    <div class="col-6">
-      <h1 class="heading">About elegancescent</h1>
-      <p class="about-text">elegance scent was established by Mufuniwa Mbedzi and Asiphe Ndimlana in 2023. We Started this e-commerce website to give young male adults and grown Men a platform to purchase their favourite cologne and smell presentable while looking stylish. <br>
-        As a new e-commerce website we are proud to announce our partners that we collaborated with
-      </p>
-
-      <img class="brand-img" src="https://i.postimg.cc/fW5mscgb/HM.png" alt="">
-      <img class="brand-img" src="https://i.postimg.cc/YqYJsSSM/download.png" alt="">
-      <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
-      <img class="brand-img" src="https://i.postimg.cc/DfXv7nzY/fcce4567-f070-42b4-9b00-d46c32a9cca8.jpg" alt="">
-    </div>
   </div>
 </div>
 </template>
@@ -42,6 +47,11 @@
   border-radius: 40px;
   margin: 10px;
 }
+.img-container {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
 .m-img {
   /* width: 800px; */
   border: 2px solid white;
@@ -50,7 +60,11 @@
   color: white;
   font-size: 50px;
   font-family: 'Libre Baskerville', serif;
-;
+}
+.brands {
+  color: white;
+  font-size: 40px;
+  font-family: 'Libre Baskerville', serif;
 }
 .brand-img {
   border-radius: 100px;
