@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const express = require("express"); // Import express
 const router = express.Router();
 const bodyParser = require("body-parser");
-const { verifyAToken } = require("../middleware/AuthenticateUser");
+const { createToken } = require("../middleware/AuthenticateUser");
 const routes = express.Router();
 
 const {
@@ -46,12 +46,14 @@ const showUserByID = (req, res) => {
 const createUser = (req, res) => {
   const data = req.body;
   data.userPass = bcrypt.hashSync(data.userPass, 10);
+  const user = {
+    emailAdd: data.emailAdd,
+    userPass: data.userPass,
+  };
+  let token = createToken(user);
   insertUser(data, (err, results) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(results);
-    }
+    if (err) throw err;
+    res.json(token, results);
   });
 };
 
