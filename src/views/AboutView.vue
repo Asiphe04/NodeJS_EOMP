@@ -1,7 +1,7 @@
 <template>
 <div class="container">
-  <div class="row">
-    <div class="col-6">
+  
+    <div class="col-lg-6 col-md-12 col-sm-12 about-grid">
       <h1 class="heading">About elegancescent</h1>
       <p class="about-text">elegance scent was established by Mufuniwa Mbedzi and Asiphe Ndimlana in 2023. We Started this e-commerce website to give young male adults and grown Men a platform to purchase their favourite cologne and smell presentable while looking stylish. <br>
         As a new e-commerce website we are proud to announce our partners that we collaborated with
@@ -16,6 +16,8 @@
       <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
       <img class="brand-img" src="https://i.postimg.cc/DfXv7nzY/fcce4567-f070-42b4-9b00-d46c32a9cca8.jpg" alt="">
     </div>
+  
+</div>
 
     <div class="img-container">
       <div class="card card-img" style="width: 320px;">
@@ -35,8 +37,7 @@
 </div>
 
     </div>
-  </div>
-</div>
+  
 </template>
 
 <style>
@@ -46,6 +47,10 @@
   object-fit: cover;
   border-radius: 40px;
   margin: 10px;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .img-container {
   display: flex;
@@ -63,6 +68,8 @@
 }
 .brands {
   color: white;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   font-size: 40px;
   font-family: 'Libre Baskerville', serif;
 }
@@ -86,5 +93,28 @@
   font-size: 26px;
   font-family: 'Libre Baskerville', serif;
 
+}
+
+
+@media only screen and (max-width: 700px) {
+  .about-grid{
+    margin: 5px;
+  }
+  .card-img {
+  margin: 5px;
+  margin-left: 10px;
+  height: 400px;
+  width: 300px;
+  border-radius: 40px;
+  background-color: rgb(33, 33, 80);
+  color: white;
+}
+.about-img{
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 40px;
+  margin: 10px;
+}
 }
 </style>

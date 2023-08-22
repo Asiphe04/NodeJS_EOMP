@@ -6,7 +6,7 @@
     <div class="col-6 div">
       <img class="home-img" src="https://i.postimg.cc/x8gN9HyH/Cheap-Cologne-hsh-91-696x572.webp" alt="">
     </div>
-    <div class="col-6 div">
+    <div class="col-lg-6 col-md-6 col-sm-12">
       <p class="home-p">You Want people to notice you as soon <br> as you enter a room? Well you <br> Came to the right place</p>
     </div>
   </div>
@@ -133,5 +133,29 @@ export default {
   object-fit: cover;
 }
 
+
+@media only screen and (max-width: 700px) {
+
+  .home-slide {
+  box-shadow: grey 10px 10px 10px;
+  border-radius: 40px;
+  width: 390px !important;
+  height: 130px;
+  align-items: center;
+  padding: 5px;
+  margin: 40px;
+  margin-left: 50px;
+  object-fit: fill;
+}
+.home-img {
+  box-shadow: grey 10px 10px 10px;
+  /* border: 2px solid black; */
+  width: 350px;
+  height: 300px;
+  border-radius: 40px;
+  margin-left: 80px;
+  object-fit: cover;
+}
+}
 
 </style>
