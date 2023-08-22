@@ -1,4 +1,5 @@
 //import functions from product model
+const bcrypt = require("bcrypt");
 const {
   getUsers,
   getUserByID,
@@ -32,6 +33,7 @@ const showUserByID = (req, res) => {
 // create new user
 const createUser = (req, res) => {
   const data = req.body;
+  data.userPass = bcrypt.hashSync(data.userPass, 10);
   insertUser(data, (err, results) => {
     if (err) {
       res.send(err);
