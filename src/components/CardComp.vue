@@ -1,25 +1,30 @@
 <template>
-     <router-link :to="{name: 'products', params: {id: product.prodID}}" >
-      <div>
-      </div>
-     <div class="top-picks-items col-3 container add {{ product.category }}">
-        <img :src ="product.prodURL" :alt="product.prodName" class="top-picks-img">
-    
-     <p class="price">{{ product.prodName }} <br> R{{ product.amount }}</p>
-      <button class="btn-see-more btn" >See more</button>
+  <router-link :to="{ name: 'products', params: { id: product.prodID } }">
+    <div></div>
+    <div class="top-picks-items col-3 container add {product.category}">
+      <img
+        :src="product.prodURL"
+        :alt="product.prodName"
+        class="top-picks-img"
+      />
+
+      <p class="price">
+        {{ product.prodName }} <br />
+        R{{ product.amount }}
+      </p>
+      <button class="btn-see-more btn">See more</button>
     </div>
-    
-</router-link>
+  </router-link>
 </template>
 <script>
- export default{
-        props: ["product"]
-    }
+export default {
+  props: ["product"],
+};
 </script>
 <style>
-a{
-    text-decoration: none;
-   color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
 .top-picks-img {
   height: 186px;
@@ -27,12 +32,10 @@ a{
   padding: 5px;
   object-fit: fill;
   border-radius: 5% !important;
-  
 }
 .price {
   font-size: 24px;
-  font-family: 'Libre Baskerville', serif;
-
+  font-family: "Libre Baskerville", serif;
 }
 .top-picks-items {
   /* border: 1px solid white; */
@@ -45,7 +48,6 @@ a{
   border-radius: 5%;
   width: 85%;
   /* height: 270px; */
-
 }
 
 .top-picks-items:hover {
@@ -65,7 +67,7 @@ a{
   color: white !important;
   border-radius: 7% !important;
   width: 8em !important;
-    margin: 5px;
+  margin: 5px;
   border-style: none;
 }
 </style>
