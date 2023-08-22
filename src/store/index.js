@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 const URL = "https://nodejseomp.onrender.com/";
 export default createStore({
   state: {
@@ -9,43 +9,46 @@ export default createStore({
     showSpinner: true,
     message: null,
   },
- 
+
   mutations: {
+    setMessage: (state, mesage) => {
+      state.message = mesage;
+    },
     setProducts: (state, products) => {
       state.products = products;
     },
     setProduct: (state, product) => {
       state.product = product;
     },
-    setUsers:(state, users) =>{
+    setUsers: (state, users) => {
       state.users = users;
     },
-    setUser:(state, user) =>{
+    setUser: (state, user) => {
       state.users = user;
     },
     setSpinner(state, products) {
-      state.showSpinner = products
+      state.showSpinner = products;
     },
   },
   actions: {
-     login: async(context, id)=> {
+    login: async (context, id) => {
       const res = await post(`${URL}login`, id);
-      const {result, err} = await res.data;
+      const { result, err } = await res.data;
       if (result) {
-        context.commit('setUser', result);
-      }else {
-        context.commit('setMessage', err)
+        context.commit("setUser", result);
+      } else {
+        context.commit("setMessage", err);
       }
     },
-     register: async(context, id) => {
-      const res = await post(`${URL}users`, id)
-      const {msg, err} = await res.data;
-      if(msg) {
-        context.commit('setMessage', msg);
-      }else {
-        context.commit('setMessage', err);
+    register: async (context, id) => {
+      const res = await post(`${URL}users`, id);
+      const { msg, err } = await res.data;
+      if (msg) {
+        context.commit("setMessage", msg);
+      } else {
+        context.commit("setMessage", err);
       }
-    }, 
+    },
     async fetchUsers(context, payload) {
       try {
         const res = await fetch(`${URL}users`, payload);
@@ -96,7 +99,7 @@ export default createStore({
         console.error("Error updating user:", error);
       }
     },
-    
+
     getProducts: async (context) => {
       try {
         const res = await fetch(`${URL}products`);
@@ -105,37 +108,29 @@ export default createStore({
         }
         const products = await res.json();
         context.commit("setProducts", products);
-        context.commit('setSpinner', false)
+        context.commit("setSpinner", false);
       } catch (error) {
-        context.commit('setSpinner', true);
+        context.commit("setSpinner", true);
         console.error("Error fetching products:", error);
       }
     },
-    // fetchProduct: async (context, id) => {
-    //   try {
-    //     const res = await fetch(`${URL}Products/` + id);
-    //     if (!res.ok) {
-    //       throw new Error("Failed to fetch product");
-    //     }
-    //     const Product = await res.json();
-    //     context.commit("setProduct", Product);
-    //   } catch (error) {
-    //     console.error("Error fetching product:", error);
-    //   }
-    // },
     getProduct: async (context, id) => {
-      fetch(`${URL}products`)
-        .then((res) => res.json())
-        .then(({ products }) => {
-          let product;
-          products.forEach((prod) => {
-            if (prod.id == id) {
-              product = prod;
-            }
-          });
-          context.commit("setProduct", product);
-        });
+      try {
+        const response = await fetch(`${URL}products/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch product");
+        }
+
+        const product = await response.json();
+
+        // Assuming your API returns the product directly
+        context.commit("setProduct", product);
+      } catch (error) {
+        console.error(error);
+        // Handle the error appropriately, e.g., display an error message to the user
+      }
     },
+
+
   },
- 
-})
+});

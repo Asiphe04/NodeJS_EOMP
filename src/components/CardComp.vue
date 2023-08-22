@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'products', params: { id: product.prodID } }">
+  <router-link :to="{ name: 'product', params: { id: product.prodID } }">
     <div></div>
     <div class="top-picks-items col-3 container add {product.category}">
       <img
@@ -21,7 +21,7 @@ export default {
   props: ["product"],
 };
 </script>
-<style>
+<style scoped>
 a {
   text-decoration: none;
   color: white;
@@ -62,12 +62,5 @@ a {
 
   border-style: none;
 }
-.btn-add-to-cart {
-  background: #238636 !important;
-  color: white !important;
-  border-radius: 7% !important;
-  width: 8em !important;
-  margin: 5px;
-  border-style: none;
-}
+
 </style>

@@ -1,85 +1,10 @@
-<!-- <template>
+<template>
   <h1>Products</h1>
-
-  <div class="filter-btns">
-    <button type="button" class="filter-btn" id="all" data-filter="all">
-      all
-    </button>
-    <button type="button" class="filter-btn" id="Sale" data-filter="Sale">
-      Sale
-    </button>
-    <button
-      type="button"
-      class="filter-btn"
-      id="limited Edition"
-      data-filter="limited Edition"
-    >
-      Limited Edition
-    </button>
-    <button type="button" class="filter-btn" id="New" data-filter="New">
-      New
-    </button>
-  </div>
-
-  <select id="sort-select">
-    <option>Sort options</option>
+  <select id="sort-select" v-model="selectedSort">
     <option value="alphabetical">Sort Alphabetically</option>
     <option value="price-high">Sort by Price (High to Low)</option>
     <option value="price-low">Sort by Price (Low to High)</option>
   </select>
-
-  <div v-if="products" class="products_container row row-cols-4 m-0">
-    <CardComp
-      v-for="product of products"
-      :key="product.prodID"
-      :product="product"
-    />
-  </div>
-  <div v-else><h1>Error:404</h1></div>
-</template>
-<script>
-import CardComp from "@/components/CardComp.vue";
-export default {
-  data() {
-    return {
-      selectedFilter: "all",
-      selectedSort: "alphabetical",
-    };
-  },
-  computed: {
-    filteredAndSortedProducts() {
-      let filteredProducts = this.products;
-
-      if (this.selectedFilter !== "all") {
-        filteredProducts = filteredProducts.filter(
-          (product) => product.category === this.selectedFilter
-        );
-      }
-
-      if (this.selectedSort === "alphabetical") {
-        filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (this.selectedSort === "price-high") {
-        filteredProducts.sort((a, b) => b.price - a.price);
-      } else if (this.selectedSort === "price-low") {
-        filteredProducts.sort((a, b) => a.price - b.price);
-      }
-
-      return filteredProducts;
-    },
-    products() {
-      return this.$store.state.products;
-    },
-  },
-  mounted() {
-    this.$store.dispatch("getProducts");
-  },
-  components: { CardComp },
-};
-</script>
- -->
-
-<template>
-  <h1>Products</h1>
 
   <div class="filter-btns">
     <button
@@ -116,12 +41,6 @@ export default {
     </button>
   </div>
 
-  <select id="sort-select" v-model="selectedSort">
-    <option value="alphabetical">Sort Alphabetically</option>
-    <option value="price-high">Sort by Price (High to Low)</option>
-    <option value="price-low">Sort by Price (Low to High)</option>
-  </select>
-
   <div
     v-if="filteredProducts.length > 0"
     class="products_container row row-cols-4 m-0"
@@ -146,14 +65,27 @@ export default {
     };
   },
   computed: {
+    products() {
+      return this.$store.state.products;
+    },
     filteredProducts() {
-      return this.products.filter((product) => {
-        if (this.selectedFilter === "all") {
-          return true;
-        } else {
-          return product.category === this.selectedFilter;
-        }
-      });
+      let filtered = this.products;
+
+      if (this.selectedFilter !== "all") {
+        filtered = filtered.filter(
+          (product) => product.category === this.selectedFilter
+        );
+      }
+
+      if (this.selectedSort === "alphabetical") {
+        filtered.sort((a, b) => a.prodName.localeCompare(b.prodName));
+      } else if (this.selectedSort === "price-high") {
+        filtered.sort((a, b) => b.amount - a.amount);
+      } else if (this.selectedSort === "price-low") {
+        filtered.sort((a, b) => a.amount - b.amount);
+      }
+
+      return filtered;
     },
   },
   methods: {
@@ -166,6 +98,7 @@ export default {
       this.products = this.$store.state.products;
     });
   },
+
   components: { CardComp },
 };
 </script>
