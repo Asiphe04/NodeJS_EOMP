@@ -4,9 +4,11 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 // Importing routes
 const router = require("./routes/router");
+// const router = express.Router();
 
 // Setting port based on environment variables
 require("dotenv").config();

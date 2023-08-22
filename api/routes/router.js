@@ -12,6 +12,7 @@ const {
   createProduct,
   deleteProduct,
   updateProduct,
+ 
 } = require("../controllers/products");
 
 //get all products
@@ -46,6 +47,12 @@ router.get("/users/:id", showUserByID);
 
 //create a new user
 router.post("/users", createUser);
+
+//login a user
+// router.post("/users/login", bodyParser.json(), (req, res) => {
+//   users.login(req, res);
+// });
+// router.post("/users/login", loginUser);
 
 // Delete a user
 router.delete("/users/:id", deleteUser);

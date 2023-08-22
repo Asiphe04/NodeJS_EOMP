@@ -1,14 +1,26 @@
 //import functions from product model
+// const bcrypt = require("bcrypt");
+// const router = express.Router();
+// const bodyParser = require("body-parser");
+// const { verifyAToken } = require("../middleware/authentication");
+// const routes = express.Router();
 const bcrypt = require("bcrypt");
+const express = require("express"); // Import express
+const router = express.Router();
+const bodyParser = require("body-parser");
+const { verifyAToken } = require("../middleware/AuthenticateUser");
+const routes = express.Router();
+
 const {
   getUsers,
   getUserByID,
   insertUser,
   updateUserByID,
   deleteUserByID,
+  loginUser,
 } = require("../models/userModels");
 
-//get all products
+//get all users
 const showUsers = (req, res) => {
   getUsers((err, results) => {
     if (err) {
@@ -42,6 +54,13 @@ const createUser = (req, res) => {
     }
   });
 };
+
+//login user
+
+router.post("/users/login", bodyParser.json(), (req, res) => {
+  users.loginUser(req, res);
+});
+
 // delete a user
 const deleteUser = (req, res) => {
   const id = req.params.id;
