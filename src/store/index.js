@@ -4,18 +4,18 @@ export default createStore({
   state: {
     users: null,
     user: null,
-    Products: null,
-    Product: null,
+    products: null,
+    product: null,
     showSpinner: true,
     message: null,
   },
  
   mutations: {
-    setProducts: (state, Products) => {
-      state.Products = Products;
+    setProducts: (state, products) => {
+      state.products = products;
     },
-    setProduct: (state, Product) => {
-      state.Product = Product;
+    setProduct: (state, product) => {
+      state.product = product;
     },
     setUsers:(state, users) =>{
       state.users = users;
@@ -23,8 +23,8 @@ export default createStore({
     setUser:(state, user) =>{
       state.users = user;
     },
-    setSpinner(state, Products) {
-      state.showSpinner = Products
+    setSpinner(state, products) {
+      state.showSpinner = products
     },
   },
   actions: {
@@ -97,14 +97,14 @@ export default createStore({
       }
     },
     
-    fetchProducts: async (context) => {
+    getProducts: async (context) => {
       try {
         const res = await fetch(`${URL}products`);
         if (!res.ok) {
           throw new Error("Failed to fetch products");
         }
-        const Products = await res.json();
-        context.commit("setProducts", Products);
+        const products = await res.json();
+        context.commit("setProducts", products);
         context.commit('setSpinner', false)
       } catch (error) {
         context.commit('setSpinner', true);
@@ -123,7 +123,7 @@ export default createStore({
     //     console.error("Error fetching product:", error);
     //   }
     // },
-    fetchProduct: async (context, id) => {
+    getProduct: async (context, id) => {
       fetch(`${URL}products`)
         .then((res) => res.json())
         .then(({ products }) => {

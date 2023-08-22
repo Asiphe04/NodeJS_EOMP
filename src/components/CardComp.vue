@@ -1,10 +1,9 @@
 <template>
-     <router-link :to="{name: 'product', params: {id: product.id}}" >
+     <router-link :to="{name: 'products', params: {id: product.prodID}}" >
      <div class="top-picks-items col-3 container add {{ product.category }}">
-        <img :src ="product.img" :alt="product.itemName" class="top-picks-img">
+        <img :src ="product.prodURL" :alt="product.prodName" class="top-picks-img">
     
-     <p>{{ product.itemName }}<br/>R{{ product.price }}</p>
-     <button class="btn-add-to-cart btn" >Add to Cart</button>
+     <p>{{ product.prodName }}<br/>R{{ product.amount }}</p>
       <button class="btn-see-more btn" >See More</button>
     </div>
 </router-link>
