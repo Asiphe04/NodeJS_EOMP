@@ -39,12 +39,14 @@
         <tr>
           <th class="text-white">ID</th>
           <th class="text-white">Name</th>
+          <th class="text-white">Surname</th>
           <th class="text-white">Age</th>
           <th class="text-white">Gender</th>
           <th class="text-white">Role</th>
           <th class="text-white">Email</th>
-          <th class="text-white">Password</th>
+          <th class="text-white password">Password</th>
           <th class="text-white">Image</th>
+          <th class="text-white">Actions</th>
         </tr>
       </thead>
       <tbody class="table-body" v-if="users">
@@ -75,13 +77,13 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("getProducts"),
-    this.$store.dispatch("getUsers");
+    this.$store.dispatch("getProducts"), this.$store.dispatch("getUsers");
   },
 };
 </script>
 
 <style scoped>
+
 .container {
   display: flex;
   flex-direction: column;

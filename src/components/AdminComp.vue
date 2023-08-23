@@ -2,7 +2,8 @@
   <tr class="table-row">
     <th class="table-head text-white">{{ product.prodID }}</th>
     <td class="text-white">{{ product.prodName }}</td>
-    <td class="text-white">{{ product.amount }}</td>
+    <td class="text-white">{{ product.quantity }}</td>
+    <td class="text-white">R{{ product.amount }}</td>
     <td class="text-white">{{ product.category }}</td>
     <td><img :src="product.prodURL" alt="" class="prodImg" /></td>
     <td class="text-white">

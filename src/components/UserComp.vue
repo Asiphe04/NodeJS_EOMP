@@ -6,8 +6,8 @@
     <td class="text-white">{{ user.userAge }}</td>
     <td class="text-white">{{ user.Gender }}</td>
     <td class="text-white">{{ user.userRole }}</td>
-    <td class="text-white">{{ user.emailAdd }}</td>
-    <td class="text-white">{{ user.userPass }}</td>
+    <td class="text-white emailAdd">{{ user.emailAdd }}</td>
+    <td class="text-white password">{{ user.userPass }}</td>
     <td><img :src="user.userProfile" alt="" class="prodImg" /></td>
 
     <td class="second-table-data">
@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style scoped>
+.password,
+.emailAdd {
+  font-size: 16px !important;
+}
 .prodImg {
   width: 100px;
 }
