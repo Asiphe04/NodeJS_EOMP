@@ -1,27 +1,54 @@
 <template>
   <div class="container">
+    <h1 class="text-white">Products</h1>
     <button class="btn-add">
       <router-link to="/admin/add"> Add Product </router-link>
     </button>
-    <table >
+    <table>
       <thead class="table-header">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Actions</th>
+          <th class="text-white">ID</th>
+          <th class="text-white">Name</th>
+          <th class="text-white">Quantity</th>
+          <th class="text-white">Price</th>
+          <th class="text-white">Category</th>
+          <th class="text-white">Image</th>
+          <th class="text-white">Description</th>
+          <th class="text-white">Actions</th>
         </tr>
       </thead>
-      <tbody class="table-body" v-if="Products">
+      <tbody class="table-body" v-if="products">
         <AdminComp
-          v-for="Product of Products"
-          :key="Product.productID"
-          :Product="Product"
-    
-          />
+          v-for="product of products"
+          :key="product.prodID"
+          :product="product"
+        />
+      </tbody>
+      <tbody v-else>
+        ERROR 404
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h1 class="text-white">Users</h1>
+    <button class="btn-add">
+      <router-link to="/users/add"> Add User </router-link>
+    </button>
+    <table>
+      <thead class="table-header">
+        <tr>
+          <th class="text-white">ID</th>
+          <th class="text-white">Name</th>
+          <th class="text-white">Age</th>
+          <th class="text-white">Gender</th>
+          <th class="text-white">Role</th>
+          <th class="text-white">Email</th>
+          <th class="text-white">Password</th>
+          <th class="text-white">Image</th>
+        </tr>
+      </thead>
+      <tbody class="table-body" v-if="users">
+        <UserComp v-for="user of users" :key="user.userID" :user="user" />
       </tbody>
       <tbody v-else>
         ERROR 404
@@ -31,19 +58,25 @@
 </template>
 
 <script>
+import UserComp from "@/components/UserComp.vue";
 import AdminComp from "@/components/AdminComp.vue";
 
 export default {
   components: {
     AdminComp,
+    UserComp,
   },
   computed: {
-    Products() {
-      return this.$store.state.Products;
+    products() {
+      return this.$store.state.products;
+    },
+    users() {
+      return this.$store.state.users;
     },
   },
   mounted() {
-    this.$store.dispatch("getProducts");
+    this.$store.dispatch("getProducts"),
+    this.$store.dispatch("getUsers");
   },
 };
 </script>
@@ -62,7 +95,6 @@ export default {
   border: 1px solid #000000;
   text-align: center;
   border-radius: 0.25rem;
-
 }
 
 table {

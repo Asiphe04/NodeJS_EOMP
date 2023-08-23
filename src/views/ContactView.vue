@@ -1,48 +1,55 @@
 <template>
+  <form
+    class="form-container"
+    action="https://formspree.io/f/mknaypjg"
+    method="POST"
+  >
+    <div class="mb-3">
+      <label for="first name" class="label">First Name</label><br />
+      <input
+        name="first name"
+        class="inputs"
+        placeholder="First Name"
+        id="firstname"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Last Name" class="label">Last Name</label><br />
+      <input
+        name="Last name"
+        class="inputs"
+        placeholder="Last Name"
+        id="last Name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="label">email address</label><br />
+      <input
+        type="email"
+        class="inputs"
+        placeholder="email@gmail.com"
+        id="email account"
+        required
+      />
+    </div>
+    <label
+      ><br />
+      <textarea
+        class="msg-input"
+        name="message"
+        placeholder="Enter Message"
+      ></textarea>
+    </label>
+    <div>
+      <button class="btn btn-outline-secondary button" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
 
-<form class="form-container" action="https://formspree.io/f/mknaypjg" method="POST">
-              <div class="mb-3">
-                <label for="first name" class="label">First Name</label><br>
-                <input
-                  name="first name"
-                  class="inputs"
-                  placeholder="First Name"
-                  id="firstname"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="Last Name" class="label">Last Name</label><br>
-                <input
-                  name="Last name"
-                  class="inputs"
-                  placeholder="Last Name"
-                  id="last Name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="label">email account</label><br>
-                <input
-                  type="email"
-                  class="inputs"
-                  placeholder="email@gmail.com"
-                  id="email account"
-                  required
-                />
-              </div>
-              <label><br>
-    <textarea class="msg-input" name="message" placeholder="Enter Message"></textarea>
-  </label>
-              <div>
-                <button class="btn btn-outline-secondary button" type="submit">
-                  Submit
-                </button>
-              </div>
-            </form>
-
-
-      <!-- <form class="contact-container"
+  <!-- <form class="contact-container"
   action="https://formspree.io/f/xleybjok"
   method="POST"
 >
@@ -58,15 +65,15 @@
   </label>
   your other form fields go here -->
   <!-- <button type="submit">Send</button>
-</form> --> 
+</form> -->
 </template>
 
 <style>
 .msg-input {
-    width: 500px;
-    height: 70px;
-    border-radius: 15px;
-    text-align: left;
+  width: 500px;
+  height: 70px;
+  border-radius: 15px;
+  text-align: left;
 }
 .label {
   color: white;
@@ -88,8 +95,8 @@
 }
 .inputs {
   border-radius: 40px;
-width: 400px;
-height: 60px;
+  width: 400px;
+  height: 60px;
   margin: 5px;
   text-align: center;
 }

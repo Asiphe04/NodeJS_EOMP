@@ -31,39 +31,24 @@ export default createStore({
     },
   },
   actions: {
-    login: async (context, id) => {
-      const res = await post(`${URL}login`, id);
-      const { result, err } = await res.data;
-      if (result) {
-        context.commit("setUser", result);
-      } else {
-        context.commit("setMessage", err);
-      }
-    },
-    register: async (context, id) => {
-      const res = await post(`${URL}users`, id);
-      const { msg, err } = await res.data;
-      if (msg) {
-        context.commit("setMessage", msg);
-      } else {
-        context.commit("setMessage", err);
-      }
-    },
-    async fetchUsers(context, payload) {
+    getUsers: async (context) => {
       try {
-        const res = await fetch(`${URL}users`, payload);
+        const res = await fetch(`${URL}users`);
         if (!res.ok) {
           throw new Error("Failed to fetch users");
         }
         const users = await res.json();
         context.commit("setUsers", users);
+        context.commit("setSpinner", false);
       } catch (error) {
+        context.commit("setSpinner", true);
         console.error("Error fetching users:", error);
       }
     },
-    async fetchUserById(context, id) {
+
+    async getUser(context, id) {
       try {
-        const res = await fetch(`${URL}Users/${id}`);
+        const res = await fetch(`${URL}users/${id}`);
         if (!res.ok) {
           throw new Error("Failed to fetch user by ID");
         }
@@ -75,28 +60,6 @@ export default createStore({
         }
       } catch (error) {
         console.error("Error fetching user by ID:", error);
-      }
-    },
-    async updateUser(context, payload) {
-      try {
-        const res = await fetch(`${URL}user`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) {
-          throw new Error("Failed to update user");
-        }
-        const { msg, err } = await res.json();
-        if (msg) {
-          context.commit("setUser", msg);
-        } else {
-          context.commit("setUser", err);
-        }
-      } catch (error) {
-        console.error("Error updating user:", error);
       }
     },
 
@@ -130,7 +93,5 @@ export default createStore({
         // Handle the error appropriately, e.g., display an error message to the user
       }
     },
-
-
   },
 });
