@@ -27,26 +27,26 @@ a {
   color: white;
 }
 .top-picks-img {
-  height: 186px;
-  width: 100%;
-  padding: 5px;
-  object-fit: fill;
+  height: 186px !important;
+  width: 100% !important;
+  padding: 5px !important;
+  object-fit: fill !important;
   border-radius: 5% !important;
 }
 .price {
-  font-size: 24px;
-  font-family: "Libre Baskerville", serif;
+  font-size: 24px !important;
+  font-family: "Libre Baskerville", serif !important;
 }
 .top-picks-items {
   /* border: 1px solid white; */
-  background-color: rgb(33, 33, 80);
-  box-shadow: black 5px 5px 5px;
-  margin: 5px;
-  margin-bottom: 24px;
-  padding: 5px;
-  text-align: center;
-  border-radius: 5%;
-  width: 85%;
+  background-color: rgb(33, 33, 80) !important;
+  box-shadow: black 5px 5px 5px !important;
+  margin: 5px !important;
+  margin-bottom: 24px !important;
+  padding: 5px !important;
+  text-align: center !important;
+  border-radius: 5% !important;
+  width: 85% !important;
   /* height: 270px; */
 }
 
@@ -58,8 +58,8 @@ a {
 
   color: white !important;
   border-radius: 7% !important;
-  width: 8em;
+  width: 8em !important;
 
-  border-style: none;
+  border-style: none !important;
 }
 </style>

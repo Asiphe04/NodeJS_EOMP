@@ -1,5 +1,5 @@
 <template>
-  <h1>Products</h1>
+  <h1 class="text-white">Products</h1>
   <select id="sort-select" v-model="selectedSort">
     <option value="alphabetical">Sort Alphabetically</option>
     <option value="price-high">Sort by Price (High to Low)</option>
@@ -51,7 +51,7 @@
       :product="product"
     />
   </div>
-  
+
   <div v-else class="lds-roller">
     <div></div>
     <div></div>
