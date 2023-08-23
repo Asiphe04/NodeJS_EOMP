@@ -1,8 +1,3 @@
-// module.exports = {
-//     productRoutes: require('./ProductRoutes'),
-//     userRoutes: require('./UserRoutes'),
-//   }
-// import express
 const express = require("express");
 const router = express.Router();
 // import functions from controller
@@ -12,7 +7,6 @@ const {
   createProduct,
   deleteProduct,
   updateProduct,
- 
 } = require("../controllers/products");
 
 //get all products

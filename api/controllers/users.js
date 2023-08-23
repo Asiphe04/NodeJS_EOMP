@@ -43,19 +43,46 @@ const showUserByID = (req, res) => {
 };
 
 // create new user
+// const createUser = (req, res) => {
+//   const data = req.body;
+//   data.userPass = bcrypt.hashSync(data.userPass, 10);
+//   const user = {
+//     emailAdd: data.emailAdd,
+//     userPass: data.userPass,
+//   };
+//   let token = createToken(user);
+//   insertUser(data, (err, results) => {
+//     if (err) throw err;
+//     res.json(token, results);
+//   });
+// };
 const createUser = (req, res) => {
   const data = req.body;
+  
+  // Check if userPass is provided in the request body
+  if (!data.userPass) {
+    return res.status(400).json({ error: "Password is required." });
+  }
+
+  // Hash the password
   data.userPass = bcrypt.hashSync(data.userPass, 10);
+
   const user = {
     emailAdd: data.emailAdd,
     userPass: data.userPass,
   };
+  
   let token = createToken(user);
+  
   insertUser(data, (err, results) => {
-    if (err) throw err;
-    res.json(token, results);
+    if (err) {
+      return res.status(500).json({ error: "An error occurred while creating the user." });
+    }
+    
+    res.json({ token, results });
   });
 };
+
 
 //login user
 
