@@ -1,57 +1,47 @@
 <template>
   <div>
-    <div class="container flex-container" >
-      <label >Name</label>
+    <div class="container flex-container">
+      <label>Name</label>
       <input
         type="text"
         autocomplete="off"
         required
-     
         name="productName"
         v-model="productName"
-       
       />
-      <label >Image</label>
+      <label>Image</label>
       <input
         type="text"
         autocomplete="off"
         required
-      
         name="image"
         v-model="image"
-       
       />
-      <label >Description</label>
-      
+      <label>Description</label>
+
       <input
         type="text"
         autocomplete="off"
         required
-       
         name="description"
         v-model="description"
-      
       />
 
-      <label >Price</label>
+      <label>Price</label>
       <input
         type="text"
         autocomplete="off"
         required
-       
         name="price"
         v-model="price"
-       
       />
-      <label >Category</label>
+      <label>Category</label>
       <input
         type="text"
         autocomplete="off"
         required
-     
         name="category"
         v-model="category"
-       
       />
 
       <button @click="addProduct" class="btn-submit">Submit</button>
@@ -59,47 +49,42 @@
   </div>
 </template>
 <script>
-
-import axios from 'axios'
+import axios from "axios";
 export default {
-    data() {
-       return{
-        productName: '',
-      image: '',
-      description: '',
-      price: '',
-      category: '',
-       } 
-    },
-      methods: {
+  data() {
+    return {
+      productName: "",
+      image: "",
+      description: "",
+      price: "",
+      category: "",
+    };
+  },
+  methods: {
     async addProduct() {
       try {
-        await axios.post
-          ('https://mini-e-commerce.onrender.com/Products/',
-          {
-            productName: this.productName,
-            image: this.image,
-            description: this.description,
-            price: this.price,
-            category: this.category,
-          })
-        
-        this.productName = '';
-        this.image = '';
-        this.description = '';
-        this.price = '';
-        this.category = '';
+        await axios.post("https://mini-e-commerce.onrender.com/Products/", {
+          productName: this.productName,
+          image: this.image,
+          description: this.description,
+          price: this.price,
+          category: this.category,
+        });
+
+        this.productName = "";
+        this.image = "";
+        this.description = "";
+        this.price = "";
+        this.category = "";
 
         this.$router.push("/admin");
-      } catch ( err ){
-              alert( err )
-            }
+      } catch (err) {
+        alert(err);
+      }
     },
   },
-}
+};
 </script>
-
-
 
 <style scoped>
 .container {

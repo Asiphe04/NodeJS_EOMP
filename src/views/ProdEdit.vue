@@ -99,7 +99,7 @@ export default {
     async updateProduct() {
       try {
         await axios.put(
-          `https://nodejseomp.onrender.com/${this.$route.params.id}`,
+          `https://nodejseomp.onrender.com/products/${this.$route.params.id}`,
           {
             prodName: this.product.prodName,
             quantity: this.product.quantity,
