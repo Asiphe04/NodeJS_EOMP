@@ -6,16 +6,40 @@
         type="text"
         autocomplete="off"
         required
-        name="productName"
-        v-model="productName"
+        name="prodName"
+        v-model="prodName"
+      />
+      <label>Quantity</label>
+      <input
+        type="text"
+        autocomplete="off"
+        required
+        name="quantity"
+        v-model="quantity"
+      />
+      <label>Price</label>
+      <input
+        type="number"
+        autocomplete="off"
+        required
+        name="amount"
+        v-model="amount"
+      />
+      <label>Category</label>
+      <input
+        type="text"
+        autocomplete="off"
+        required
+        name="category"
+        v-model="category"
       />
       <label>Image</label>
       <input
         type="text"
         autocomplete="off"
         required
-        name="image"
-        v-model="image"
+        name="prodURL"
+        v-model="prodURL"
       />
       <label>Description</label>
 
@@ -27,23 +51,6 @@
         v-model="description"
       />
 
-      <label>Price</label>
-      <input
-        type="text"
-        autocomplete="off"
-        required
-        name="price"
-        v-model="price"
-      />
-      <label>Category</label>
-      <input
-        type="text"
-        autocomplete="off"
-        required
-        name="category"
-        v-model="category"
-      />
-
       <button @click="addProduct" class="btn-submit">Submit</button>
     </div>
   </div>
@@ -53,29 +60,32 @@ import axios from "axios";
 export default {
   data() {
     return {
-      productName: "",
-      image: "",
-      description: "",
-      price: "",
+      prodName: "",
+      quantity: "",
+      amount: "",
       category: "",
+      prodURL: "",
+      description: "",
     };
   },
   methods: {
     async addProduct() {
       try {
-        await axios.post("https://mini-e-commerce.onrender.com/Products/", {
-          productName: this.productName,
-          image: this.image,
-          description: this.description,
-          price: this.price,
+        await axios.post("https://nodejseomp.onrender.com/products/", {
+          prodName: this.prodName,
+          quantity: this.quantity,
+          amount: this.amount,
           category: this.category,
+          prodURL: this.prodURL,
+          description: this.description,
         });
 
         this.productName = "";
-        this.image = "";
-        this.description = "";
-        this.price = "";
+        this.quantity = "";
+        this.amount = "";
         this.category = "";
+        this.prodURL = "";
+        this.description = "";
 
         this.$router.push("/admin");
       } catch (err) {
