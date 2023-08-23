@@ -25,7 +25,7 @@
         name="amount"
         v-model="amount"
       />
-      <label>Category</label>
+      <label>Category</label> 
       <input
         type="text"
         autocomplete="off"
