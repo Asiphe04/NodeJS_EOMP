@@ -119,7 +119,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped;>
+label {
+  color: white !important;
+}
 .container {
   display: flex;
   flex-direction: column;
