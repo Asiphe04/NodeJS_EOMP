@@ -114,22 +114,23 @@ export default {
           `https://nodejseomp.onrender.com/users/${this.$route.params.id}`,
           {
             firstName: this.user.firstName,
-            lastName: this.user.firstName,
-            firstName: this.user.firstName,
-            firstName: this.user.firstName,
-            firstName: this.user.firstName,
-            firstName: this.user.firstName,
-            firstName: this.user.firstName,
-            firstName: this.user.firstName,
-            
+            lastName: this.user.lastName,
+            userAge: this.user.userAge,
+            Gender: this.user.Gender,
+            userRole: this.user.userRole,
+            emailAdd: this.user.emailAdd,
+            userPass: this.user.userPass,
+            userProfile: this.user.userProfile,
           }
         );
-        this.prodName = "";
-        this.quantity = "";
-        this.amount = "";
-        this.category = "";
-        this.prodURL = "";
-        this.description = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.userAge = "";
+        this.Gender = "";
+        this.userRole = "";
+        this.emailAdd = "";
+        this.userPass = "";
+        this.userProfile = "";
 
         this.$router.push("/admin");
       } catch (err) {
@@ -139,13 +140,12 @@ export default {
   },
   props: ["id"],
   computed: {
-    product() {
-      return this.$store.state.product;
+    user() {
+      return this.$store.state.user;
     },
   },
   mounted() {
-    this.$store.dispatch("getProduct", this.id),
-      this.$store.dispatch("getProducts");
+    this.$store.dispatch("getUser", this.id), this.$store.dispatch("getUsers");
   },
 };
 </script>
