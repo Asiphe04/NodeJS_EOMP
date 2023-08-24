@@ -43,9 +43,10 @@
 
   <div
     v-if="filteredProducts.length > 0"
-    class="products_container row row-cols-4 m-0"
+    class="products_container media-container row row-cols-4 m-0"
   >
     <CardComp
+  
       v-for="product of filteredProducts"
       :key="product.prodID"
       :product="product"
@@ -207,7 +208,36 @@ export default {
   height: 40px;
   margin: 10px;
 }
-@media screen and (max-width: 767px) {
+
+/* @media screen and (min-width: 300px) {
+  html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+ }
+  .media-container {
+  width: 1000px;
+  margin-left: 500px;
+}
+} */
+
+@media screen and (max-width: 700px) {
+  html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+ }
+ /* .media-container {
+  width: 1000px;
+  margin-left: 500px;
+  display: grid !important;
+  grid-template-columns: auto auto auto !important;
+} */
   .products-link {
     display: none;
   }

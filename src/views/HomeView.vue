@@ -132,7 +132,28 @@ export default {
   border-radius: 40px;
   object-fit: cover;
 }
-
+@media only screen and (max-width: 700px) {
+  .home-slide {
+  box-shadow: grey 5px 5px 5px !important;
+  border-radius: 40px;
+  max-width: 200px !important;
+  height: 190px !important;
+  align-items: center;
+  padding: 5px;
+  margin: 40px;
+  margin-left: 50px;
+  object-fit: fill;
+}
+.home-img {
+  box-shadow: grey 5px 5px 5px !important;
+  /* border: 2px solid black; */
+  width: 200px !important;
+  height: 190px !important;
+  border-radius: 20px;
+  margin-left: 40px !important;
+  object-fit: cover;
+}
+}
 
 @media only screen and (max-width: 700px) {
 
