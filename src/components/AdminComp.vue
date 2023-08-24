@@ -84,4 +84,51 @@ export default {
   background-color: #fa0000;
   border-radius: 0.125rem;
 }
+
+@media only screen and (min-width: 700px) {
+  .prodImg {
+  width: 100px;
+}
+.table-row {
+  font-size: 1.125rem;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-bottom-width: 2px;
+  width: 1000px !important;
+}
+
+.table-head {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.second-table-data {
+  gap: 1.25rem;
+  align-items: center;
+}
+.action {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.btn-edit {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  background-color: #00ff6a;
+  color: #fff;
+  border-radius: 0.125rem;
+}
+.btn-delete {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  background-color: #fa0000;
+  border-radius: 0.125rem;
+}
+.td {
+  width: 500px !important;
+  border: 2px solid white;
+}
+}
 </style>

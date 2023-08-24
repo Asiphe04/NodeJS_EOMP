@@ -142,6 +142,12 @@
   background-color: rgb(33, 33, 80);
   color: white;
 }
+.img-container {
+  display: grid !important;
+  grid-template-columns: auto;
+  margin: 20px;
+  justify-content: center;
+}
 .brands {
   /* border: 2px solid white; */
   margin-left: 40px;
@@ -155,6 +161,7 @@
 .brand-img {
   border-radius: 100px;
   width: 50px !important;
+  /* margin: 10px 25px 10px 10px !important; */
   height: 50px !important ;
   display: flex !important;
   margin-right: 50px !important;
@@ -164,10 +171,13 @@
 }
 .b-log {
   justify-content: center;
-  width: 10px !important;
+  max-width: 100px!important;
+  /* margin-left: 10px 50px 10px 10px !important; */
   justify-items: center0;
-  display: flex !important;
-  border: 2px solid white;
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  margin-left: 50px;
+  /* border: 2px solid white; */
 }
 .img-container {
   display: flex;
