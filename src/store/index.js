@@ -6,14 +6,9 @@ export default createStore({
     user: null,
     products: null,
     product: null,
-    showSpinner: true,
-    message: null,
   },
 
   mutations: {
-    setMessage: (state, mesage) => {
-      state.message = mesage;
-    },
     setProducts: (state, products) => {
       state.products = products;
     },
@@ -24,10 +19,7 @@ export default createStore({
       state.users = users;
     },
     setUser: (state, user) => {
-      state.users = user;
-    },
-    setSpinner(state, products) {
-      state.showSpinner = products;
+      state.user = user;
     },
   },
   actions: {
@@ -39,14 +31,14 @@ export default createStore({
         }
         const users = await res.json();
         context.commit("setUsers", users);
-        context.commit("setSpinner", false);
+       
       } catch (error) {
-        context.commit("setSpinner", true);
+       
         console.error("Error fetching users:", error);
       }
     },
 
-    async getUser(context, id) {
+    getUser: async (context, id) => {
       try {
         const res = await fetch(`${URL}users/${id}`);
         if (!res.ok) {
@@ -54,11 +46,9 @@ export default createStore({
         }
         const user = await response.json();
 
-        // Assuming your API returns the product directly
         context.commit("setUser", user);
       } catch (error) {
         console.error(error);
-        // Handle the error appropriately, e.g., display an error message to the user
       }
     },
 
@@ -70,9 +60,9 @@ export default createStore({
         }
         const products = await res.json();
         context.commit("setProducts", products);
-        context.commit("setSpinner", false);
+      
       } catch (error) {
-        context.commit("setSpinner", true);
+     
         console.error("Error fetching products:", error);
       }
     },
@@ -85,11 +75,11 @@ export default createStore({
 
         const product = await response.json();
 
-        // Assuming your API returns the product directly
+     
         context.commit("setProduct", product);
       } catch (error) {
         console.error(error);
-        // Handle the error appropriately, e.g., display an error message to the user
+
       }
     },
   },
