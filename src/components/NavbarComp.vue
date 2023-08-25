@@ -98,8 +98,5 @@ router-link:hover::after {
   bottom: 0;
   left: 0;
 }
-/* 
-navbar {
-  position: fixed;
-} */
+
 </style>
