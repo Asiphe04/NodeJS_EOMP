@@ -24,17 +24,17 @@
           :product="product"
         />
       </tbody>
-     
-  <tbody v-else class="lds-roller">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </tbody>
+
+      <tbody v-else class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </tbody>
     </table>
   </div>
   <div class="container">
@@ -60,22 +60,14 @@
       <tbody class="table-body" v-if="users">
         <UserComp v-for="user of users" :key="user.userID" :user="user" />
       </tbody>
-     
-  <tbody v-else class="lds-roller">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </tbody>
+
+      <SpinnerComp v-else />
     </table>
   </div>
 </template>
 
 <script>
+import SpinnerComp from "@/components/SpinnerComp.vue";
 import UserComp from "@/components/UserComp.vue";
 import AdminComp from "@/components/AdminComp.vue";
 
@@ -83,6 +75,7 @@ export default {
   components: {
     AdminComp,
     UserComp,
+    SpinnerComp,
   },
   computed: {
     products() {
@@ -99,7 +92,6 @@ export default {
 </script>
 
 <style scoped>
-
 .container {
   display: flex;
   flex-direction: column;

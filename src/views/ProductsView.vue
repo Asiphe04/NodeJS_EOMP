@@ -6,7 +6,8 @@
     <option value="price-low">Sort by Price (Low to High)</option>
   </select>
 
- <input class="m-2"
+  <input
+    class="m-2"
     v-model="searchTerm"
     placeholder="Search for a product..."
   />
@@ -46,21 +47,19 @@
     </button>
   </div>
 
-
-
   <div
     v-if="filteredProducts.length > 0"
     class="products_container media-container row row-cols-4 m-0"
   >
     <CardComp
-  
       v-for="product of filteredProducts"
       :key="product.prodID"
       :product="product"
     />
   </div>
+  <SpinnerComp v-else />
 
-  <div v-else class="lds-roller">
+  <!-- <div v-else class="lds-roller">
     <div></div>
     <div></div>
     <div></div>
@@ -69,9 +68,10 @@
     <div></div>
     <div></div>
     <div></div>
-  </div>
+  </div> -->
 </template>
 <script>
+import SpinnerComp from "@/components/SpinnerComp.vue";
 import CardComp from "@/components/CardComp.vue";
 
 export default {
@@ -122,97 +122,11 @@ export default {
     });
   },
 
-  components: { CardComp },
+  components: { CardComp, SpinnerComp },
 };
 </script>
 
-
 <style>
-.lds-roller {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-roller div {
-  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 40px 40px;
-}
-.lds-roller div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #fed;
-  margin: -4px 0 0 -4px;
-}
-.lds-roller div:nth-child(1) {
-  animation-delay: -0.036s;
-}
-.lds-roller div:nth-child(1):after {
-  top: 63px;
-  left: 63px;
-}
-.lds-roller div:nth-child(2) {
-  animation-delay: -0.072s;
-}
-.lds-roller div:nth-child(2):after {
-  top: 68px;
-  left: 56px;
-}
-.lds-roller div:nth-child(3) {
-  animation-delay: -0.108s;
-}
-.lds-roller div:nth-child(3):after {
-  top: 71px;
-  left: 48px;
-}
-.lds-roller div:nth-child(4) {
-  animation-delay: -0.144s;
-}
-.lds-roller div:nth-child(4):after {
-  top: 72px;
-  left: 40px;
-}
-.lds-roller div:nth-child(5) {
-  animation-delay: -0.18s;
-}
-.lds-roller div:nth-child(5):after {
-  top: 71px;
-  left: 32px;
-}
-.lds-roller div:nth-child(6) {
-  animation-delay: -0.216s;
-}
-.lds-roller div:nth-child(6):after {
-  top: 68px;
-  left: 24px;
-}
-.lds-roller div:nth-child(7) {
-  animation-delay: -0.252s;
-}
-.lds-roller div:nth-child(7):after {
-  top: 63px;
-  left: 17px;
-}
-.lds-roller div:nth-child(8) {
-  animation-delay: -0.288s;
-}
-.lds-roller div:nth-child(8):after {
-  top: 56px;
-  left: 12px;
-}
-@keyframes lds-roller {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 #sort-select {
   background-color: #161b22;
   color: white;
@@ -238,14 +152,15 @@ export default {
 } */
 
 @media screen and (max-width: 700px) {
-  html,body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
- }
- /* .media-container {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  /* .media-container {
   width: 1000px;
   margin-left: 500px;
   display: grid !important;
