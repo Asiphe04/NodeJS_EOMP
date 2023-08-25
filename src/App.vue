@@ -1,23 +1,23 @@
 <template>
-   <NavbarComp></NavbarComp>
-  <router-view/>
+  <NavbarComp></NavbarComp>
+  <router-view />
   <FooterComp></FooterComp>
 </template>
 
 <script>
-import NavbarComp from './components/NavbarComp.vue';
-import FooterComp from './components/FooterComp.vue'
+import NavbarComp from "./components/NavbarComp.vue";
+import FooterComp from "./components/FooterComp.vue";
 export default {
-  components : {
-   NavbarComp,
-    FooterComp
-  }
-}
+  components: {
+    NavbarComp,
+    FooterComp,
+  },
+};
 </script>
 
 <style lang="scss">
 ::-webkit-scrollbar {
-     display: none;
+  display: none;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,9 +26,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   //  height: 120vh;
-   background-image: linear-gradient(to bottom, rgba(28, 21, 21, 1), rgba(59, 76, 136, 1));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(28, 21, 21, 1),
+    rgba(59, 76, 136, 1)
+  );
   //  background-color: linear-gradient(rgba(28, 21, 21, 1), rgba(59, 76, 136, 1));
-
 }
 
 nav {
@@ -40,10 +43,12 @@ nav {
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: white;
+      color: rgb(17, 30, 219);
     }
   }
 }
 
-
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
