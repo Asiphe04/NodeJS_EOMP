@@ -1,4 +1,7 @@
 <template>
+   <br>
+  <br>
+  <br> 
   <div class="home">
     <h1 class="text-white">Elegant Essences</h1>
   <div class="background">

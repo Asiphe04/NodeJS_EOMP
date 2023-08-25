@@ -1,4 +1,7 @@
 <template>
+   <br>
+  <br>
+  <br> 
 <h1  class="m-1 text-white">Contact</h1>
 <div class="container d-flex">
     <div class="contact-form col-6 m-4">

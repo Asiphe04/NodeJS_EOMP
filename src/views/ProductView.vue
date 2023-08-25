@@ -1,4 +1,7 @@
 <template>
+   <br>
+  <br>
+  <br> 
   <div v-if="product" class="employee-details">
     <div class="img-container">
       <img

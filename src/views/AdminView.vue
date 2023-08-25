@@ -1,4 +1,7 @@
 <template>
+  <br />
+  <br />
+  <br />
   <div class="container">
     <h1 class="text-white">Products</h1>
     <button class="btn-add">
@@ -119,31 +122,29 @@ table {
   border-bottom: none;
 }
 
-
 @media screen and (max-width: 700px) {
-  html,body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
- }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
   table {
-  width: 100% Vh !important;
-  border-collapse: collapse;
-  /* border: 2px solid white; */
-
-}
-.table-header th {
-  width: 50px !important;
-  font-size: 1rem;
-  border-bottom: 2px solid #000000;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-
-}
+    width: 100% Vh !important;
+    border-collapse: collapse;
+    /* border: 2px solid white; */
+  }
+  .table-header th {
+    width: 50px !important;
+    font-size: 1rem;
+    border-bottom: 2px solid #000000;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
 }
 </style>

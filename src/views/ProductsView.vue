@@ -1,4 +1,7 @@
 <template>
+   <br>
+  <br>
+  <br> 
   <h1 class="text-white">Products</h1>
   <select id="sort-select" v-model="selectedSort">
     <option value="alphabetical">Sort Alphabetically</option>

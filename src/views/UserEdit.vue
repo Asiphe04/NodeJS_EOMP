@@ -1,4 +1,7 @@
 <template>
+  <br />
+  <br />
+  <br />
   <UserEditComp />
 </template>
 
