@@ -36,6 +36,7 @@ export default {
       try {
         await axios.delete(`https://nodejseomp.onrender.com/products/${id}`);
         this.$store.dispatch("getProducts");
+         alert("Product has been deleted");
       } catch (err) {
         alert(err);
       }

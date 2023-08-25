@@ -35,6 +35,7 @@ export default {
       try {
         await axios.delete(`https://nodejseomp.onrender.com/users/${id}`);
         this.$store.dispatch("getUsers");
+         alert("User has been deleted");
       } catch (err) {
         alert(err);
       }

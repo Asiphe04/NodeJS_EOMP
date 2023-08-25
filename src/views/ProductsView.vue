@@ -41,7 +41,7 @@
     </button>
   </div>
 
- <input
+ <input class="m-2"
     v-model="searchTerm"
     placeholder="Search for a product..."
   />

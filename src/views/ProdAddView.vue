@@ -98,6 +98,9 @@ export default {
 </script>
 
 <style scoped>
+label{
+  color: white;
+}
 .container {
   display: flex;
   flex-direction: column;
