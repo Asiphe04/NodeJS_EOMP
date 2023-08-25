@@ -88,6 +88,7 @@ export default {
         this.description = "";
 
         this.$router.push("/admin");
+         alert("Product has been created");
       } catch (err) {
         alert(err);
       }

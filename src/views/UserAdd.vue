@@ -111,6 +111,7 @@ export default {
         this.userProfile = "";
 
         this.$router.push("/admin");
+         alert("User has been created");
       } catch (err) {
         alert(err);
       }

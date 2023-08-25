@@ -117,6 +117,7 @@ export default {
         this.description = "";
 
         this.$router.push("/admin");
+        alert("Product has been updated");
       } catch (err) {
         console.log(err);
       }
@@ -136,6 +137,9 @@ export default {
 </script>
 
 <style scoped>
+label{
+  color:white
+}
 .container {
   display: flex;
   flex-direction: column;

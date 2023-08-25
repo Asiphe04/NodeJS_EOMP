@@ -41,6 +41,11 @@
     </button>
   </div>
 
+ <input
+    v-model="searchTerm"
+    placeholder="Search for a product..."
+  />
+
   <div
     v-if="filteredProducts.length > 0"
     class="products_container media-container row row-cols-4 m-0"
@@ -64,39 +69,44 @@
     <div></div>
   </div>
 </template>
-
 <script>
 import CardComp from "@/components/CardComp.vue";
+
 export default {
   data() {
     return {
       selectedFilter: "all",
       selectedSort: "alphabetical",
       products: [],
+      searchTerm: "", // Add a data property for the search term
     };
   },
   computed: {
-    products() {
-      return this.$store.state.products;
-    },
-    filteredProducts() {
-      let filtered = this.products;
+    // Rename this computed property to avoid naming conflict
+    sortedProducts() {
+      let sorted = this.products;
 
       if (this.selectedFilter !== "all") {
-        filtered = filtered.filter(
+        sorted = sorted.filter(
           (product) => product.category === this.selectedFilter
         );
       }
 
       if (this.selectedSort === "alphabetical") {
-        filtered.sort((a, b) => a.prodName.localeCompare(b.prodName));
+        sorted.sort((a, b) => a.prodName.localeCompare(b.prodName));
       } else if (this.selectedSort === "price-high") {
-        filtered.sort((a, b) => b.amount - a.amount);
+        sorted.sort((a, b) => b.amount - a.amount);
       } else if (this.selectedSort === "price-low") {
-        filtered.sort((a, b) => a.amount - b.amount);
+        sorted.sort((a, b) => a.amount - b.amount);
       }
 
-      return filtered;
+      return sorted;
+    },
+    // Create a computed property to filter products based on the search term
+    filteredProducts() {
+      return this.sortedProducts.filter((product) =>
+        product.prodName.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
     },
   },
   methods: {
@@ -113,6 +123,7 @@ export default {
   components: { CardComp },
 };
 </script>
+
 
 <style>
 .lds-roller {

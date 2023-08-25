@@ -135,6 +135,7 @@ export default {
         this.userProfile = "";
 
         this.$router.push("/admin");
+         alert("User has been updated");
       } catch (err) {
         console.log(err);
       }
