@@ -132,4 +132,28 @@ export default {
     border: 2px solid white;
   }
 }
+
+@media screen and (max-width: 700px) {
+    html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+ }
+ .table-row {
+  font-size: 1.125rem;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-bottom-width: 2px;
+  width: 600px !important;
+}
+  .btn-delete {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: #fa0000;
+    border-radius: 0.125rem;
+  }
+}
 </style>

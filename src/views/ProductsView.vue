@@ -50,6 +50,7 @@
   <div
     v-if="filteredProducts.length > 0"
     class="products_container media-container row row-cols-4 m-0"
+    id="products"
   >
     <CardComp
       v-for="product of filteredProducts"
@@ -127,8 +128,18 @@ export default {
   margin: 10px;
 }
 
+@media screen and (max-width: 300px) {
+#products {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* margin-right: 50px !important; */
+  width: auto !important;
+}
+}
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
   html,
   body {
     width: 100%;
