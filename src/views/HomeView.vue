@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1 class="text-white">Elegant Essences</h1>
   <div class="background">
 <div class="container">
   <div class="row">
@@ -7,7 +8,7 @@
       <img class="home-img" src="https://i.postimg.cc/x8gN9HyH/Cheap-Cologne-hsh-91-696x572.webp" alt="">
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <p class="home-p">You Want people to notice you as soon <br> as you enter a room? Well you <br> Came to the right place</p>
+      <p class="home-p text-start">You Want people to notice you as soon <br> as you enter a room? Well you <br> Came to the right place</p>
     </div>
   </div>
 </div>
@@ -21,7 +22,7 @@
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner slide">
@@ -37,12 +38,12 @@
         <h5 class="comment">sent bon pour les réunions d'affaires.</h5>
       </div>
     </div>
-    <div class="carousel-item">
+    <!-- <div class="carousel-item">
       <img src="https://i.postimg.cc/cHk9mk8v/6108v-Uoj05-L-SX569-edit5.jpg" class=" home-slide" alt="">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="comment">Be a ladies with Ammunition.</h5>
       </div>
-    </div>
+    </div> -->
     <div class="carousel-item ">
       <img src="https://i.postimg.cc/Bntx5ZBB/DAV-CW-REB-22-CPV-CW-M-In-Store-16-9-edit3.jpg" class=" home-slide" alt="">
       <div class="carousel-caption d-none d-md-block">

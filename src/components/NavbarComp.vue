@@ -60,6 +60,9 @@ nav {
   /* box-shadow: 0 0 5px -3px #121212; */
   margin-bottom: 20px;
 }
+.nav-text:hover{
+color:  rgb(20, 46, 119) !important;
+}
 .navbar-brand {
   background-color: linear-gradient(
     rgba(21, 22, 25, 1),

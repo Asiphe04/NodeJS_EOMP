@@ -1,213 +1,136 @@
 <template>
-    <div class="container-fluid py-5">
-      <div class="text-center">
-        <h1 class="display-5 p-5 text-fw-bold text-animation">
-          <p class="heading-text">Message us</p>
-        </h1>
-      </div>
-      <div class="contact-container">
-        <div class="container">
-        <div class="row justify-content-center contact">
-          <div class="col-12 col-sm-6 contact-colu">
-            <!--  -->
-            <form action="https://formspree.io/f/mzblpqqg" method="POST">
-              <input
-                class="input"
-                v-model="text"
-                placeholder="Firstname"
-                required
-              />
-              <input
-                class="input"
-                v-model="text"
-                placeholder="Secondname"
-                required
-              />
-              <input
-                class="input"
-                v-model="text"
-                placeholder="email.gmail.com"
-                required
-              />
-
-              <textarea
-                class="msg"
-                name="message"
-                placeholder="Leave message"
-              ></textarea>
-
-              <button class="contact-btn" type="submit">Submit</button>
-            </form>
-            <!--  -->
-          </div>
-          <div class="col-12 col-sm-6">
-            <p class="text-start contact-text">Location: Cape Town</p>
-            <p class="text-start contact-text">Tel: 021 455 6908 </p>
-            <p class="text-start contact-text">Email: mufuniwawebdev@gmail.com</p>
-            <p class="text-start contact-text">Whats App cell: 082 345 6787</p>
-            <p class="text-start contact-text">Instagram: Bychance@_Mbedzi</p>
-            <img class=" text-start contact-img" src="https://i.postimg.cc/fb7R5rkW/Screenshot-2023-07-03-162214.png" alt="">
-          </div>
-        </div>
-      </div>
-      </div>
+<h1  class="m-1 text-white">Contact</h1>
+<div class="container d-flex">
+    <div class="contact-form col-6 m-4">
+        <span class="title text-white">Leave a Message</span>
+  <form class="form"  action="https://formspree.io/f/mzblpqqg"
+  method="POST">
+    <div class="group">
+    <input placeholder="‎" type="text" required="">
+    <label for="name">Name</label>
     </div>
+<div class="group">
+    <input placeholder="‎" type="email" id="email" name="email" required="">
+    <label for="email">Email</label>
+    </div>
+<div class="group">
+    <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+    <label for="comment">Message</label>
+</div>
+    <button type="submit">Send!</button>
+  </form> 
+    </div>
+    <div class="col-6 m-4" id="contact-img">  
+    </div>
+</div>
 </template>
 
 <script>
-export default {};
+    export default{
+
+    }
 </script>
-
 <style scoped>
-.text-animation {
-  overflow: hidden;
-  animation: typing 3s backwards;
-  white-space: nowrap;
-  font-size: 90px;
-}
-@keyframes typing {
-  from {
-    width: 0;
+
+@media (max-width:700px){
+  .contact-form{
+    width: 90% !important;
   }
-  to {
-    width: 100%;
+  .title{
+    display: none;
+  }
+  #contact-img{
+    display: none;
   }
 }
-.heading-text {
-  color: white;
-  font-size: 90px;
-  font-family: 'Libre Baskerville', serif;
+#contact-img{
+  border-radius: 3%;
+    height: 350px;
+    width: 500px;
+    background-image: url("https://i.postimg.cc/zGr9kGjy/IMG-20220430-WA0017.jpg");
+    background-size: cover;
+  background-position: center;
 }
-.Home-text {
-  color: white;
-  font-size: 50px;
-  font-family: 'Libre Baskerville', serif;
+.container {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
 }
-.contact{
-  background: rgba(18, 31, 147, 1);
-  min-height: 500px;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 5px 5px;
-  border-radius: 20px;
-  padding: 0 0 5px 0;
-}
-.contact-img {
-  width: 200px;
-  height: 200px;
-  /* margin-left: 120px; */
-}
-.input {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  padding: 10px;
+.title {
+  font-size: 24px;
   text-align: center;
-  margin: 5px;
-  margin-top: 50px;
-  display: grid;
-  box-shadow: 5px 5px;
 }
-.msg {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  box-shadow: 5px 5px;
-  margin: 5px;
-  height: 100px;
-  width: 220px;
-}
-.contact-text {
-  text-align: center;
-  font-family: 'Libre Baskerville', serif;
-  color: white;
+
+.form {
   margin-top: 20px;
-}
-.contact-btn {
-  border: 3px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  margin: 5px;
-  box-shadow: 3px 3px;
-  transition: 1s;
-}
-.contact-btn:hover {
-  transition: 1s;
-  color: white;
-  background-color: rgba(18, 31, 147, 1);
+  display: flex;
+  flex-direction: column;
 }
 
-.background {
-  background-color: rgba(2, 48, 71, 1);
+.group {
+  position: relative;
 }
-@media only screen and (max-width: 300px) {
-  /* .contact {
-  background: rgba(18, 31, 147, 1);
-  height: 500px;
-  width: 900px;
-  box-shadow: 5px 5px;
-  display: grid;
-  grid-template-rows: auto auto;
-  border-radius: 20px;
-} */
-.heading-text {
-  color: white;
-  font-size: 40px;
-  font-family: 'Libre Baskerville', serif;
-}
-.contact-colu {
-  display: grid;
-  grid-template-columns: auto;
-}
-.input {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  width: 150px;
-  padding: 10px;
-  text-align: center;
-  margin: 5px;
-  margin-top: 50px;
-  display: grid;
-  box-shadow: 5px 5px;
-}
-}
-@media only screen and (min-width: 700px) {
 
-  /* .contact {
-  background: rgba(18, 31, 147, 1);
-  height: 600px;
-  width: 990px;
-  box-shadow: 5px 5px;
-  border-radius: 20px;
-} */
-.msg {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  box-shadow: 5px 5px;
-  margin: 5px;
-  height: 80px;
-  width: 200px;
+.form .group label {
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  transition: all .3s ease;
 }
-.input {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  width: 150px;
+
+.form .group input,
+.form .group textarea {
   padding: 10px;
-  text-align: center;
-  margin: 5px;
-  margin-top: 50px;
-  display: grid;
-  box-shadow: 5px 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
 }
-.contact-colu {
-  display: grid;
-  grid-template-columns: auto auto;
+
+.form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+  top: 10px;
+  background-color: transparent;
 }
-.msg {
-  border: 4px solid rgba(18, 31, 147, 1);
-  border-radius: 20px;
-  box-shadow: 5px 5px;
-  margin: 5px;
-  height: 80px;
-  width: 200px;
+
+.form .group input:focus,
+.form .group textarea:focus {
+  background-color: white;
+  border-color: var(--secondary-color);
 }
+
+.form .group input:focus+ label, .form .group textarea:focus +label {
+  top: -20px;
+  left: 10px;
+  background-color: transparent;
+  border-radius: 5%;
+  color: var(--secondary-color);
+  font-size: 14px;
 }
+
+.form .group textarea {
+  height: 100px;
+}
+button {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge  #653aff;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  margin:14px
+}
+
+
+
+
+
 </style>

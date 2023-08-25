@@ -52,14 +52,13 @@ export default createStore({
         if (!res.ok) {
           throw new Error("Failed to fetch user by ID");
         }
-        const { results, err } = await res.json();
-        if (results) {
-          context.commit("setUsers", results);
-        } else {
-          context.commit("setMessage", err);
-        }
+        const user = await response.json();
+
+        // Assuming your API returns the product directly
+        context.commit("setUser", user);
       } catch (error) {
-        console.error("Error fetching user by ID:", error);
+        console.error(error);
+        // Handle the error appropriately, e.g., display an error message to the user
       }
     },
 

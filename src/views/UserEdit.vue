@@ -88,7 +88,9 @@
 
       <button @click="updateUser" class="btn-submit">Submit</button>
     </div>
+      <div v-else> No users found</div>
   </div>
+
 </template>
 
 <script>

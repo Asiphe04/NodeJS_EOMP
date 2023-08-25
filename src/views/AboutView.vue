@@ -1,27 +1,24 @@
 <template>
 <div class="container">
   
-    <div class="col-lg-6 col-md-12 col-sm-12 about-grid">
+    <div class="col-12 ">
       <h1 class="heading">About elegancescent</h1>
-      <p class="about-text">elegance scent was established by Mufuniwa Mbedzi and Asiphe Ndimlana in 2023. We Started this e-commerce website to give young male adults and grown Men a platform to purchase their favourite cologne and smell presentable while looking stylish. <br>
-        As a new e-commerce website we are proud to announce our partners that we collaborated with
+      <p class="about-text text-start">Elegance Scent, founded by Mufuniwa Mbedzi and Asiphe Ndimlana in 2023, is more than just an e-commerce website; it's a testament to their vision of helping young male adults and grown men elevate their personal style and confidence through the power of fragrance. With an array of carefully curated colognes, Elegance Scent caters to the diverse tastes and preferences of its discerning clientele.
+
+Our founders, driven by a passion for the art of scent, embarked on this journey to create a seamless and convenient shopping experience for individuals who understand the transformative impact of a signature fragrance. Elegance Scent isn't just about selling colognes; it's about fostering a culture of self-expression and self-assuredness.
+
+As you explore our online platform, you'll discover a meticulously selected collection of fragrances from renowned brands worldwide. From the fresh, invigorating notes that accompany a casual day to the sophisticated, captivating scents suitable for special occasions, Elegance Scent has it all.
+
+We believe that every man should have the opportunity to exude elegance and charisma effortlessly. With Elegance Scent, it's not just about smelling good; it's about feeling good. Our commitment to quality, authenticity, and exceptional customer service sets us apart as a trusted destination for all your fragrance needs.
+
+<!-- In the coming years, we look forward to expanding our product offerings, collaborating with emerging perfumers, and enhancing the overall experience for our valued customers. Elegance Scent is not just a business; it's a journey of self-discovery and personal refinement, one spritz at a time. Thank you for joining us on this fragrant adventure, and we can't wait to help you find your signature scent. <br> -->
+     
       </p>
 
     </div>
-    <div class="col-6 brand-container d-flex flex-column">
-      <h2 class="brands">Working with one of the best brands in the Globe</h2>
-      <div class="d-flex justify-content-between b-log">
-        <img class="brand-img" src="https://i.postimg.cc/fW5mscgb/HM.png" alt="">
-        <img class="brand-img" src="https://i.postimg.cc/YqYJsSSM/download.png" alt="">
-        <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
-        <img class="brand-img" src="https://i.postimg.cc/DfXv7nzY/fcce4567-f070-42b4-9b00-d46c32a9cca8.jpg" alt="">
-
-      </div>
-    </div>
-  
-</div>
-
+     <h1 class="text-white">Our Founders</h1>
     <div class="img-container">
+     
       <div class="card card-img" style="width: 320px;">
   <img src="https://i.postimg.cc/MTVbqYDX/C12-Mufuniwa-Mbedzi-1.jpg" class="card-img-top about-img" alt="">
   <div class="card-body">
@@ -39,6 +36,19 @@
 </div>
 
     </div>
+    <div class="col-12 brand-container ">
+      <h1 class="text-white">Our official sponsers</h1>
+      <div class="d-flex justify-content-center">
+        <img class="brand-img" src="https://i.postimg.cc/fW5mscgb/HM.png" alt="">
+        <img class="brand-img" src="https://i.postimg.cc/YqYJsSSM/download.png" alt="">
+        <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
+        <img class="brand-img" src="https://i.postimg.cc/DfXv7nzY/fcce4567-f070-42b4-9b00-d46c32a9cca8.jpg" alt="">
+
+      </div>
+    </div>
+  
+</div>
+
   
 </template>
 
@@ -50,17 +60,8 @@
   border-radius: 40px;
   margin: 10px;
 }
-.container {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-.brand-container {
-  /* border: 2px solid white; */
-  margin-top: 90px;
-  width: 600px;
-  height: 400px;
-  display: flex;
-}
+
+
 .img-container {
   display: flex;
   margin: 20px;
@@ -77,9 +78,9 @@
 }
 .brands {
   color: white;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  font-size: 40px;
+  /* display: grid; */
+  /* grid-template-columns: auto auto auto auto; */
+  /* font-size: 40px; */
   font-family: 'Libre Baskerville', serif;
 }
 .brand-img {
@@ -88,7 +89,7 @@
   width: 100px;
   height: 100px;
   display: flex;
-  grid-template-columns: auto auto auto auto;
+  /* grid-template-columns: auto auto auto auto; */
   object-fit: cover;
   margin: 10px;
 }
@@ -102,7 +103,7 @@
 }
 .about-text {
   color: white;
-  font-size: 26px;
+  font-size: 22px;
   font-family: 'Libre Baskerville', serif;
 }
 @media only screen and (max-width: 300px) {
