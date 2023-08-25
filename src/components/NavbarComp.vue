@@ -76,6 +76,7 @@ nav {
 .nav-text {
   color: white;
 }
+
 .img-nav {
   text-align: left;
   border: 2px solid black;
@@ -98,5 +99,4 @@ router-link:hover::after {
   bottom: 0;
   left: 0;
 }
-
 </style>

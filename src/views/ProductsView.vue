@@ -59,16 +59,7 @@
   </div>
   <SpinnerComp v-else />
 
-  <!-- <div v-else class="lds-roller">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div> -->
+
 </template>
 <script>
 import SpinnerComp from "@/components/SpinnerComp.vue";
@@ -80,11 +71,11 @@ export default {
       selectedFilter: "all",
       selectedSort: "alphabetical",
       products: [],
-      searchTerm: "", // Add a data property for the search term
+      searchTerm: "", 
     };
   },
   computed: {
-    // Rename this computed property to avoid naming conflict
+   
     sortedProducts() {
       let sorted = this.products;
 
@@ -136,20 +127,6 @@ export default {
   margin: 10px;
 }
 
-/* @media screen and (min-width: 300px) {
-  html,body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  
- }
-  .media-container {
-  width: 1000px;
-  margin-left: 500px;
-}
-} */
 
 @media screen and (max-width: 700px) {
   html,
@@ -160,12 +137,7 @@ export default {
     padding: 0;
     overflow-x: hidden;
   }
-  /* .media-container {
-  width: 1000px;
-  margin-left: 500px;
-  display: grid !important;
-  grid-template-columns: auto auto auto !important;
-} */
+
   .products-link {
     display: none;
   }
