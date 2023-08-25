@@ -22,8 +22,7 @@
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner slide">
     <div class="carousel-item active">
@@ -38,12 +37,7 @@
         <h5 class="comment">sent bon pour les réunions d'affaires.</h5>
       </div>
     </div>
-    <!-- <div class="carousel-item">
-      <img src="https://i.postimg.cc/cHk9mk8v/6108v-Uoj05-L-SX569-edit5.jpg" class=" home-slide" alt="">
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="comment">Be a ladies with Ammunition.</h5>
-      </div>
-    </div> -->
+
     <div class="carousel-item ">
       <img src="https://i.postimg.cc/Bntx5ZBB/DAV-CW-REB-22-CPV-CW-M-In-Store-16-9-edit3.jpg" class=" home-slide" alt="">
       <div class="carousel-caption d-none d-md-block">
@@ -133,7 +127,7 @@ export default {
   border-radius: 40px;
   object-fit: cover;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 300px) {
   .home-slide {
   box-shadow: grey 5px 5px 5px !important;
   border-radius: 40px;

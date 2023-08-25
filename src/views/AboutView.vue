@@ -16,7 +16,9 @@ We believe that every man should have the opportunity to exude elegance and char
       </p>
 
     </div>
-     <h1 class="text-white">Our Founders</h1>
+    <div class="header">
+      <h1 class="text-white">Our Founders</h1>
+    </div>
     <div class="img-container">
      
       <div class="card card-img" style="width: 320px;">
@@ -37,8 +39,10 @@ We believe that every man should have the opportunity to exude elegance and char
 
     </div>
     <div class="col-12 brand-container ">
-      <h1 class="text-white">Our official sponsers</h1>
-      <div class="d-flex justify-content-center">
+<div class="bran">
+  <h1 class="text-white">Our official sponsers</h1>
+</div>
+      <div class="d-flex justify-content-center brands">
         <img class="brand-img" src="https://i.postimg.cc/fW5mscgb/HM.png" alt="">
         <img class="brand-img" src="https://i.postimg.cc/YqYJsSSM/download.png" alt="">
         <img class="brand-img" src="https://i.postimg.cc/Vv6VgjNk/the-north-face-brand-logo-white-symbol-clothes-design-icon-abstract-illustration-with-black-backgrou.jpg" alt="">
@@ -114,11 +118,25 @@ We believe that every man should have the opportunity to exude elegance and char
   padding: 0;
   overflow-x: hidden;
  }
+ .bran{
+  width: 250px !important;
+  margin-left: 20px !important;
+ }
+ .brands {
+display: grid !important;
+justify-content: center !important;
+align-items: center !important;
+margin-left: 65px !important;
+grid-template-columns: auto auto !important;
+ }
+ .header {
+  justify-content: center !important;
+  align-items: center !important;
+  width: 250px !important;
+ }
  .heading {
   color: white;
   font-size: 30px;
-  width: 270px;
-  /* text-align: center; */
   font-family: 'Libre Baskerville', serif;
 }
   .about-grid{
@@ -145,9 +163,12 @@ We believe that every man should have the opportunity to exude elegance and char
 }
 .img-container {
   display: grid !important;
-  grid-template-columns: auto;
+  grid-template-columns: auto !important;
   margin: 20px;
-  justify-content: center;
+  width: 240px;
+  /* margin-left: 25px !important; */
+  justify-content: center !important;
+  align-items: center !important;
 }
 .brands {
   /* border: 2px solid white; */

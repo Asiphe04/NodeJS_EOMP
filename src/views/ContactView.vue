@@ -6,15 +6,18 @@
   <form class="form"  action="https://formspree.io/f/mzblpqqg"
   method="POST">
     <div class="group">
-    <input placeholder="‎" type="text" required="">
+    <input placeholder="‎" type="text" required oninvalid="this.setCustomValidity('Please fill in the space')"
+            oninput="this.setCustomValidity('')"/>
     <label for="name">Name</label>
     </div>
 <div class="group">
-    <input placeholder="‎" type="email" id="email" name="email" required="">
+    <input placeholder="‎" type="email" id="email" name="email" required oninvalid="this.setCustomValidity('Please fill in the space')"
+            oninput="this.setCustomValidity('')"/>
     <label for="email">Email</label>
     </div>
 <div class="group">
-    <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+    <textarea placeholder="‎" id="comment" name="comment" rows="5" required oninvalid="this.setCustomValidity('Please fill in the space')"
+            oninput="this.setCustomValidity('')"></textarea>
     <label for="comment">Message</label>
 </div>
     <button type="submit">Send!</button>
@@ -128,9 +131,5 @@ button {
   font-size: 16px;
   margin:14px
 }
-
-
-
-
 
 </style>

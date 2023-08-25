@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{ name: 'product', params: { id: product.prodID } }">
-    
-    <div class="top-picks-items pro-container col-3 container add {product.category}">
+    <div class="cards">
+       <div class="top-picks-items pro-container col-3 container add {product.category}" id="top">
       <img
         :src="product.prodURL"
         :alt="product.prodName"
@@ -14,6 +14,9 @@
       </p>
       <button class="btn-see-more btn">See more</button>
     </div>
+    </div>
+    
+   
   </router-link>
 </template>
 <script>
@@ -53,6 +56,12 @@ a {
 .top-picks-items:hover {
   background: #161b22 !important;
 }
+#top {
+  justify-content: center !important;
+  align-items: center !important;
+  
+  
+}
 .btn-see-more {
   background: #232b36 !important;
 
@@ -64,7 +73,38 @@ a {
 }
 
 
-  
+@media screen and (max-width: 300px) {
+  html,body {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+ }
+ .top-picks-items {
+  /* background-color: rgb(33, 33, 80) !important;
+  box-shadow: black 5px 5px 5px !important;
+  margin: 5px !important;
+  margin-bottom: 24% !important;
+  padding: 5% !important;
+  text-align: center !important;
+  border-radius: 5% !important;
+  width: 290% !important; */
+  width: 100%;
+  margin: 5px auto;
+  padding: 10px;
+align-items: center !important;
+justify-content: center;
+}
+
+.cards {
+  width: 150px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: auto !important;
+  margin-right: 150px !important;
+}
+}
 
 
 @media only screen and (max-width: 700px) {
@@ -91,8 +131,7 @@ a {
   color: white !important;
   border-radius: 7% !important;
   width: 6em !important;
-  border-style: none !important;
-  
+  border-style: none !important; 
 }
 }
 </style>

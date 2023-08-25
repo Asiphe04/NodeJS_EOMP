@@ -8,10 +8,10 @@
       />
     </div>
 
-    <p>{{ product.prodName }}<br />R{{ product.amount }}</p>
-    <p>{{ product.description }}</p>
+    <h1 class="text-white">{{ product.prodName }}<br />R{{ product.amount }}</h1>
+    <p class="text-white">{{ product.description }}</p>
   </div>
-  <div v-else>Error</div>
+  <div v-else class="text-white"> Error</div>
 </template>
 
 <script>
