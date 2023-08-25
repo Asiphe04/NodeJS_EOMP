@@ -25,16 +25,7 @@
         />
       </tbody>
 
-      <tbody v-else class="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </tbody>
+      <SpinnerComp v-else />
     </table>
   </div>
   <div class="container">
