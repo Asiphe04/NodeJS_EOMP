@@ -88,7 +88,7 @@
 
       <button @click="updateUser" class="btn-submit">Submit</button>
     </div>
-      <div v-else> No users found</div>
+     <h1 v-else class="text-white">Error</h1>
   </div>
 
 </template>
@@ -154,6 +154,9 @@ export default {
 </script>
 
 <style scoped>
+label{
+  color: white;
+}
 .container {
   display: flex;
   flex-direction: column;

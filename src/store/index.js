@@ -44,7 +44,7 @@ export default createStore({
         if (!res.ok) {
           throw new Error("Failed to fetch user by ID");
         }
-        const user = await response.json();
+        const user = await res.json();
 
         context.commit("setUser", user);
       } catch (error) {
