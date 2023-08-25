@@ -49,7 +49,10 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
+nav a.router-link-exact-active {
+  color: rgb(98, 111, 255) !important;
+}
 @import url("https://fonts.googleapis.com/css2?family=Catamaran&family=Cormorant+Garamond&family=Genos&family=Montserrat:wght@500&display=swap");
 nav {
   background-image: linear-gradient(
