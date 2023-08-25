@@ -1,7 +1,7 @@
 //Import database connection
 const db = require("../config/db");
 const bcrypt = require("bcrypt");
-const {createToken} = require("../middleware/AuthenticateUser.js")
+const { createToken } = require("../middleware/AuthenticateUser.js");
 const { compare } = require("bcrypt");
 
 //Get users
@@ -86,26 +86,6 @@ const userLogin = (req, res) => {
     }
   });
 };
-
-// const loginUserByPass = (email, password, result) => {
-//   const query =
-//     `SELECT userID, firstName, lastName, userRole FROM users WHERE emailAdd = ${emailAdd} `;
-//   db.query(query, [email, password], (err, results) => {
-//     if (err) {
-//       console.log("Error executing login query:", query);
-//       console.log(err);
-//       result(err, null);
-//     } else {
-//       if (results.length === 1) {
-
-//         result(null, results[0]);
-//       } else {
-
-//         result({ error: "Invalid email or password." }, null);
-//       }
-//     }
-//   });
-// };
 
 // Update an existing user
 const updateUserByID = (id, data, result) => {
