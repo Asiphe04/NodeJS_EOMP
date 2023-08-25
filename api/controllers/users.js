@@ -10,6 +10,7 @@ const {
   insertUser,
   updateUserByID,
   deleteUserByID,
+  loginUserByPass,
 } = require("../models/userModels");
 
 // Get all users
@@ -57,7 +58,9 @@ const createUser = (req, res) => {
 
   insertUser(data, (err, results) => {
     if (err) {
-      res.status(500).json({ error: "An error occurred while creating the user." });
+      res
+        .status(500)
+        .json({ error: "An error occurred while creating the user." });
     } else {
       res.status(201).json({ token, results });
     }
@@ -77,6 +80,16 @@ const deleteUser = (req, res) => {
     }
   });
 };
+//login user
+// const loginUser = (req, res) => {
+//   const { email, password } = req.body;
+//   loginUserByPass(email, password, (err, user) => {
+//     if (err) {
+//       return res.status(401).json({ error: "Invalid email or password." });
+//     }
+//     res.json({ user });
+//   });
+// };
 
 // Update a user
 const updateUser = (req, res) => {
@@ -99,8 +112,8 @@ module.exports = {
   createUser,
   deleteUser,
   updateUser,
+  
 };
-
 
 // //import functions from product model
 // // const bcrypt = require("bcrypt");
@@ -162,7 +175,7 @@ module.exports = {
 // // };
 // const createUser = (req, res) => {
 //   const data = req.body;
-  
+
 //   // Check if userPass is provided in the request body
 //   if (!data.userPass) {
 //     return res.status(400).json({ error: "Password is required." });
@@ -175,18 +188,17 @@ module.exports = {
 //     emailAdd: data.emailAdd,
 //     userPass: data.userPass,
 //   };
-  
+
 //   let token = createToken(user);
-  
+
 //   insertUser(data, (err, results) => {
 //     if (err) {
 //       return res.status(500).json({ error: "An error occurred while creating the user." });
 //     }
-    
+
 //     res.json({ token, results });
 //   });
 // };
-
 
 // //login user
 

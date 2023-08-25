@@ -1,7 +1,10 @@
 //Import database connection
 const db = require("../config/db");
+const bcrypt = require("bcrypt");
+const {createToken} = require("../middleware/AuthenticateUser.js")
+const { compare } = require("bcrypt");
 
-//Get products
+//Get users
 const getUsers = (result) => {
   db.query(
     "SELECT userID, firstName, lastName, userAge , Gender , userRole, emailAdd, userPass, userProfile FROM users",
@@ -44,83 +47,62 @@ const insertUser = (data, result) => {
 };
 
 //login user
-class users {
-  login(req, res) {
-    const { emailAdd, userPass } = req.body;
-    const query = `
-    SELECT userID, firstName, lastName, userAge, Gender, userRole,
-    emailAdd, userProfile, userPass
-    FROM users
-    WHERE emailAdd = ?;
-  `;
-    db.query(query, [emailAdd], async (err, result) => {
-      if (err) throw err;
-      if (!result?.length) {
-        res.json({
-          status: res.statusCode,
-          msg: "You provided a wrong email.",
+const userLogin = (req, res) => {
+  const { emailAdd, userPass } = req.body;
+  const query = `SELECT firstName, lastName, userAge, gender, userRole, emailAdd, userPass FROM users WHERE emailAdd = '${emailAdd}'`;
+  db.query(query, async (err, result) => {
+    if (err) throw err;
+    if (!result?.length) {
+      res.json({
+        status: res.statusCode,
+        message: "Incorrect email address!",
+      });
+    } else {
+      await compare(userPass, result[0].userPass, (cErr, cResult) => {
+        if (cErr) throw cErr;
+        // create token
+        const token = createToken({
+          emailAdd,
+          userPass,
         });
-      } else {
-        await compare(userPass, result[0].userPass, (cErr, cResult) => {
-          if (cErr) throw cErr;
-          // Create a token
-          const token = createToken({
-            emailAdd,
-            userPass,
+        // save token
+        res.cookie("LegitUser", token, {
+          maxAge: 3600000,
+          httpOnly: true,
+        });
+        if (cResult) {
+          res.json({
+            message: "You can now enter another time",
+            token,
+            result: result[0],
           });
-          if (cResult) {
-            res.json({
-              msg: "Logged in",
-              token,
-              result: result[0],
-            });
-          } else {
-            res.json({
-              status: res.statusCode,
-              msg: "Invalid password or you have not registered",
-            });
-          }
-        });
-      }
-    });
-  }
-}
-// const loginUser = (req, res) => {
-//   const { emailAdd, userPass } = req.body;
-//   const query = `
-//     SELECT userID, firstName, lastName, userAge, gender, userRole,
-//     emailAdd, profileUrl, userPass
-//     FROM users
-//     WHERE emailAdd = ?;
-//   `;
-//   db.query(query, [emailAdd], async (err, result) => {
-//     if (err) throw err;
-//     if (!result?.length) {
-//       res.json({
-//         status: res.statusCode,
-//         msg: "Incorrect email or password.",
-//       });
+        } else {
+          res.json({
+            status: res.statusCode,
+            message: "Unregistered user or incorrect password!",
+          });
+        }
+      });
+    }
+  });
+};
+
+// const loginUserByPass = (email, password, result) => {
+//   const query =
+//     `SELECT userID, firstName, lastName, userRole FROM users WHERE emailAdd = ${emailAdd} `;
+//   db.query(query, [email, password], (err, results) => {
+//     if (err) {
+//       console.log("Error executing login query:", query);
+//       console.log(err);
+//       result(err, null);
 //     } else {
-//       await compare(userPass, result[0].userPass, (cErr, cResult) => {
-//         if (cErr) throw cErr;
-//         // Create a token
-//         const token = createToken({
-//           emailAdd,
-//           userPass,
-//         });
-//         if (cResult) {
-//           res.json({
-//             msg: "Logged in",
-//             token,
-//             result: result[0],
-//           });
-//         } else {
-//           res.json({
-//             status: res.statusCode,
-//             msg: "Incorrect email or password.",
-//           });
-//         }
-//       });
+//       if (results.length === 1) {
+
+//         result(null, results[0]);
+//       } else {
+
+//         result({ error: "Invalid email or password." }, null);
+//       }
 //     }
 //   });
 // };
@@ -169,4 +151,5 @@ module.exports = {
   insertUser,
   updateUserByID,
   deleteUserByID,
+  userLogin,
 };

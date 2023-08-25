@@ -32,6 +32,8 @@ const {
   updateUser,
 } = require("../controllers/users");
 
+const { userLogin } = require("../models/userModels");
+
 //users
 //get all users
 router.get("/users", showUsers);
@@ -43,10 +45,7 @@ router.get("/users/:id", showUserByID);
 router.post("/users", createUser);
 
 //login a user
-// router.post("/users/login", bodyParser.json(), (req, res) => {
-//   users.login(req, res);
-// });
-// router.post("/users/login", loginUser);
+router.post("/users/login", userLogin);
 
 // Delete a user
 router.delete("/users/:id", deleteUser);
