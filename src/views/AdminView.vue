@@ -24,9 +24,17 @@
           :product="product"
         />
       </tbody>
-      <tbody v-else>
-        ERROR 404
-      </tbody>
+     
+  <tbody v-else class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </tbody>
     </table>
   </div>
   <div class="container">
@@ -52,9 +60,17 @@
       <tbody class="table-body" v-if="users">
         <UserComp v-for="user of users" :key="user.userID" :user="user" />
       </tbody>
-      <tbody v-else>
-        ERROR 404
-      </tbody>
+     
+  <tbody v-else class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </tbody>
     </table>
   </div>
 </template>

@@ -6,6 +6,11 @@
     <option value="price-low">Sort by Price (Low to High)</option>
   </select>
 
+ <input class="m-2"
+    v-model="searchTerm"
+    placeholder="Search for a product..."
+  />
+
   <div class="filter-btns">
     <button
       type="button"
@@ -41,10 +46,7 @@
     </button>
   </div>
 
- <input class="m-2"
-    v-model="searchTerm"
-    placeholder="Search for a product..."
-  />
+
 
   <div
     v-if="filteredProducts.length > 0"
