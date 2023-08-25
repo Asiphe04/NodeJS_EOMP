@@ -1,6 +1,6 @@
 <template lang="">
   <div class="home">
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
@@ -98,10 +98,8 @@ router-link:hover::after {
   bottom: 0;
   left: 0;
 }
-
-/* .homey {
-  background-color: #D4C4C4B2 !important;
-  ;
+/* 
+navbar {
   position: fixed;
 } */
 </style>
